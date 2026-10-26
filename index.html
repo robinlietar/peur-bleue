@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Blue Funk</title>
-<meta name="description" content="Sharks in Sydney, plane crashes: what the numbers say next to the real risks of everyday life.">
-<meta property="og:title" content="Blue Funk">
-<meta property="og:description" content="Sharks in Sydney, plane crashes: what the numbers say next to the real risks of everyday life.">
+<meta name="description" content="Beyond 5 km by car, the trip to the airport carries more risk than a flight on an Australian airline. Sydney’s CBD is 8 km from the airport; Melbourne’s, about 23.">
+<meta property="og:title" content="The taxi to the airport is more dangerous than the flight.">
+<meta property="og:description" content="5 km · Beyond 5 km by car, the trip to the airport carries more risk than a flight on an Australian airline. Sydney’s CBD is 8 km from the airport; Melbourne’s, about 23.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://robinlietar.github.io/peur-bleue/">
 <link rel="canonical" href="https://robinlietar.github.io/peur-bleue/">
@@ -89,6 +89,21 @@ a:hover{text-decoration-thickness:2px}
 .lede{font-size:clamp(1.12rem,1vw + .9rem,1.3rem);line-height:1.5;color:var(--ink-2);max-width:40rem;margin-top:1.3rem}
 .unit{display:flex;gap:.9rem;align-items:baseline;margin-top:1.6rem;max-width:40rem;font-family:var(--f-display);font-size:.95rem;line-height:1.45;color:var(--ink-2)}
 .unit .eyebrow{flex:none;color:var(--ink)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,17rem);column-gap:3.5rem;align-items:start;margin-top:.9rem}
+.hero-grid h1{margin-top:0;grid-column:1;grid-row:1}
+.hero-grid .hero-num{grid-column:2;grid-row:1 / span 2;align-self:end}
+.hero-grid .lede{grid-column:1;grid-row:2}
+@media (max-width:860px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero-grid h1,.hero-grid .hero-num,.hero-grid .lede{grid-column:1;grid-row:auto;align-self:start}.hero-grid .hero-num{margin-top:1.4rem}}
+.hero-num{display:grid;gap:.55rem;border-top:2px solid var(--ink);padding-top:.9rem;align-content:start}
+.hero-num b{font-family:var(--f-display);font-weight:800;font-stretch:108%;font-size:clamp(3.4rem,4.5vw + 1.6rem,5.6rem);line-height:.95;letter-spacing:-.03em;color:var(--real)}
+.hero-num span{font-family:var(--f-display);font-size:.92rem;line-height:1.45;color:var(--ink-2)}
+.alt{margin-top:1.1rem;font-family:var(--f-display);font-size:.92rem;color:var(--ink-2)}
+.alt a{color:var(--ink);font-weight:600}
+.seg-ctl{display:inline-flex;border:1px solid var(--rule-strong);border-radius:6px;overflow:hidden;font-family:var(--f-display);font-size:.85rem}
+.seg-ctl button{font:inherit;background:transparent;color:var(--ink-2);border:0;padding:.35rem .8rem;cursor:pointer}
+.seg-ctl button + button{border-left:1px solid var(--rule-strong)}
+.seg-ctl button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.fig-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.2rem}
 
 /* Sections */
 section{padding-block:4.5rem 0}
@@ -287,12 +302,12 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
     <a class="brand" href="#top"><span class="flagmark" aria-hidden="true"><i></i><i></i></span>Blue Funk</a>
     <nav class="nav" aria-label="Sections">
       <a href="#scale">The scale</a>
+      <a href="#calculator">Calculator</a>
       <a href="#biases">Biases</a>
       <a href="#sharks">Sharks</a>
       <a href="#flying">Flying</a>
       <a href="#everyday">Everyday</a>
       <a href="#factors">Risk factors</a>
-      <a href="#calculator">Calculator</a>
       <a href="#sources">Sources</a>
       <a class="lang" href="fr/" hreflang="fr" lang="fr">Français</a>
     </nav>
@@ -303,10 +318,14 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
   <div class="wrap">
 
     <div class="hero">
-      <p class="eyebrow">Sydney · October 2026 · Fear versus the numbers</p>
-      <h1>The <span class="mark">taxi</span> to the airport is more dangerous than the flight.</h1>
-      <p class="lede">And the drive to the beach is more dangerous than the sharks. We fear what is rare and spectacular, and forget what kills every day. This site puts both on the same scale, using data from Sydney and Australia.</p>
-      <p class="unit"><span class="eyebrow">Unit</span><span>The <b>micromort</b>: a one-in-a-million chance of dying. 0.01 micromorts is a one in 100 million chance. Ronald Howard of Stanford proposed the unit to compare very different risks.</span></p>
+      <p class="eyebrow">Sydney and Australia · October 2026 · Fear versus the numbers</p>
+      <div class="hero-grid">
+        <h1>The <span class="mark">taxi</span> to the airport is more dangerous than the flight.</h1>
+        <aside class="hero-num" aria-label="Key number"><b>5 km</b><span>Beyond 5 km by car, the trip to the airport carries more risk than a flight on an Australian airline. Sydney’s CBD is 8 km from the airport; Melbourne’s, about 23.</span></aside>
+        <p class="lede">And the drive to the beach is more dangerous than the sharks. We fear what is rare and spectacular, and forget what kills every day. This site puts both on the same scale, using data from Sydney and the rest of Australia.</p>
+      </div>
+      <p class="unit"><span class="eyebrow">Unit</span><span>The <b>micromort</b> (micro + mortality): a one-in-a-million chance of dying. 0.01 micromorts is a one in 100 million chance. It is the standard unit in risk research, proposed by Ronald Howard of Stanford in 1979 and popularised by the statistician David Spiegelhalter.</span></p>
+      <p class="alt">Shark version: <a href="sharks/">The drive to the beach is more dangerous than the shark</a></p>
     </div>
 
     <figure class="fig" id="scale">
@@ -322,12 +341,56 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
         </div>
       </div>
       <div class="lp" id="ladder"></div>
-      <p class="fig-note">Sharks: Australian Shark-Incident Database (Taronga, ASID v10), New South Wales (NSW) 2010-2025, divided by beach visits estimated by Surf Life Saving NSW. Flying: Barnett and Reig Torra (MIT, 2024), deaths per passenger boarding 2018-2022. Car: about 2.5 deaths per billion passenger-kilometres (estimate from BITRE). Daily benchmarks: ABS 2024, AIHW 2025, BITRE 2025, divided by 27.9 million people. Calculations are detailed under <a href="#method">Method</a>.</p>
+      <p class="fig-note">Sharks: Australian Shark-Incident Database (Taronga, ASID v10), Australia 2010-2025, divided by coastal visits estimated by Surf Life Saving Australia. Flying: Barnett and Reig Torra (MIT, 2024), deaths per passenger boarding 2018-2022. Car: about 2.5 deaths per billion passenger-kilometres (estimate from BITRE). Daily benchmarks: ABS 2024, AIHW 2025, BITRE 2025, divided by 27.9 million people. Calculations are detailed under <a href="#method">Method</a>.</p>
       <details>
         <summary>Show the numbers</summary>
         <div class="table-wrap"><table id="ladder-table"><thead><tr><th>Activity</th><th class="n">Micromorts</th><th class="n">One chance in</th><th>Source</th></tr></thead><tbody></tbody></table></div>
       </details>
     </figure>
+
+    <section id="calculator" aria-labelledby="calc-t">
+      <div class="sec-head">
+        <p class="eyebrow">Calculator</p>
+        <h2 id="calc-t">Your year in micromorts</h2>
+        <p class="lede">Enter your habits. The calculator adds up the year's risks and compares them with an average Australian's. The starting values are an example: a Sydney surfer who flies six times a year.</p>
+      </div>
+      <div class="calc">
+        <form class="calc-in" id="calc-form">
+          <div class="field">
+            <label for="c-swim">Ocean swims per year <output id="c-swim-out" for="c-swim">40</output></label>
+            <input type="range" id="c-swim" min="0" max="250" step="5" value="40">
+          </div>
+          <label class="check" for="c-flags"><input type="checkbox" id="c-flags" checked><span>I swim between the flags, during patrol hours</span></label>
+          <div class="field">
+            <label for="c-surf">Surf sessions per year <output id="c-surf-out" for="c-surf">50</output></label>
+            <input type="range" id="c-surf" min="0" max="300" step="5" value="50">
+          </div>
+          <div class="field">
+            <label for="c-fly">Flights per year <output id="c-fly-out" for="c-fly">6</output></label>
+            <input type="range" id="c-fly" min="0" max="80" step="1" value="6">
+            <small>A one-way trip counts as one flight. A stopover counts as two.</small>
+          </div>
+          <div class="field">
+            <label for="c-air">Usual airline</label>
+            <select id="c-air">
+              <option value="t1">Tiers 1 and 2 (Qantas, Virgin Australia, Europe…)</option>
+              <option value="world">World average</option>
+              <option value="t3">Tier 3 (rest of the world)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-car">Kilometres by car per week <output id="c-car-out" for="c-car">150 km</output></label>
+            <input type="range" id="c-car" min="0" max="1500" step="10" value="150">
+          </div>
+        </form>
+        <div class="calc-out">
+          <div class="total"><b id="c-total">·</b><span id="c-total-sub">micromorts per year for these activities</span></div>
+          <div class="bars" id="calc-bars"></div>
+          <p class="calc-says" id="calc-says"></p>
+          <p class="fig-note" style="margin-top:0">The grey benchmarks are national averages across all ages. An average Australian's all-cause risk is about 6,700 micromorts a year; it depends mostly on age.</p>
+        </div>
+      </div>
+    </section>
 
     <section id="biases" aria-labelledby="biases-t">
       <div class="sec-head">
@@ -359,91 +422,6 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
           <h3>Counting attacks is not enough</h3>
           <p>"Three attacks in two days" is a striking headline. The useful question is: out of how many swims? Without the number of people in the water, a count of attacks says nothing about anyone's own risk.</p>
         </article>
-      </div>
-    </section>
-
-    <section id="sharks" aria-labelledby="sharks-t">
-      <div class="sec-head">
-        <p class="eyebrow">Sharks · Sydney and New South Wales</p>
-        <h2 id="sharks-t">Sydney's sharks</h2>
-        <p class="lede">Sydney is going through a bad run: three deaths in four years, after 59 years with none. The fear makes sense. But per swim, the risk is still tiny, and far smaller than the risk of drowning on the same beaches.</p>
-      </div>
-      <div class="stats">
-        <div class="stat"><b>3 deaths</b><span>from sharks in Sydney since 2022 (Little Bay, Long Reef, Vaucluse), after none between 1963 and 2022</span></div>
-        <div class="stat"><b>1 in 940 million</b><span>chance of dying from a shark bite per ocean swim in NSW (estimate, 2010-2025)</span></div>
-        <div class="stat"><b>50 to 1</b><span>drownings on Sydney's coast for every shark death, 2015 to 2025 (101 against 2)</span></div>
-        <div class="stat"><b>68%</b><span>of shark bites in NSW involve surfers and other board riders (2010-2025)</span></div>
-      </div>
-
-      <figure class="fig">
-        <div class="fig-head">
-          <div>
-            <p class="fig-title">Shark deaths in greater Sydney since the nets went in</p>
-            <p class="fig-sub">Each dot is one death, from 1937 to October 2026. Hover over a dot for the place and activity.</p>
-          </div>
-          <div class="legend">
-            <span class="key"><i style="--c:var(--fear)"></i>Unprovoked</span>
-            <span class="key"><i class="ring" style="--c:var(--fear)"></i>Provoked (spearfishing)</span>
-          </div>
-        </div>
-        <div class="tl-box" id="timeline"></div>
-        <ul class="tl-list">
-          <li><b>1940-1963: the harbour and the rivers</b>All nine deaths in this period were in the harbour, the bays or the Georges River, not on ocean beaches.</li>
-          <li><b>1963-2022: 59 years without a death</b>Before 2022, the last death on a Sydney ocean beach was in 1936, at South Steyne.</li>
-          <li><b>2022-2026: three deaths</b>A swimmer at Little Bay (white shark, 2022), a surfer at Long Reef (white shark, 2025), and a 12-year-old boy at Nielsen Park, Vaucluse (bull shark, January 2026).</li>
-        </ul>
-        <p class="fig-note">Sources: ASID v10 (Taronga, data to June 2026) and the list of fatal shark attacks in Australia. Taronga counts 43 deaths in Sydney since 1870.</p>
-      </figure>
-
-      <figure class="fig">
-        <div class="fig-head">
-          <div>
-            <p class="fig-title">Unprovoked shark bites in New South Wales, by year</p>
-            <p class="fig-sub">On average, 8 bites a year and fewer than one death, out of about 238 million visits to the coast.</p>
-          </div>
-          <div class="legend">
-            <span class="key"><i class="sq" style="--c:var(--fear)"></i>Fatal</span>
-            <span class="key"><i class="sq" style="--c:var(--fear-soft)"></i>Not fatal</span>
-          </div>
-        </div>
-        <div class="cols" id="nsw-cols" style="--h:190px"></div>
-        <p class="fig-note">Source: ASID v10, unprovoked bites, New South Wales, 2010-2025 (125 bites, 11 deaths).</p>
-      </figure>
-
-      <div class="split">
-        <div class="flow">
-          <h3>The risk per trip into the water</h3>
-          <p>To turn a number of attacks into a risk, you divide by exposure. In New South Wales, 5.5 million adults visit the coast 3.6 times a month, about 238 million visits a year. Surfers there would make about 32 million sessions a year.</p>
-          <div class="table-wrap"><table class="risk-table">
-            <thead><tr><th>Per trip, NSW</th><th class="n">Bite</th><th class="n">Death</th></tr></thead>
-            <tbody>
-              <tr><td>Ocean swim, shark</td><td class="n">1 in 135 M</td><td class="n">1 in 940 M</td></tr>
-              <tr><td>Surf session, shark</td><td class="n">1 in 6 M</td><td class="n">1 in 73 M</td></tr>
-              <tr><td>Coastal visit, drowning</td><td class="n">·</td><td class="n">1 in 4.2 M</td></tr>
-              <tr><td>Surf session, all causes</td><td class="n">·</td><td class="n">1 in 8.9 M</td></tr>
-            </tbody>
-          </table></div>
-          <p class="fig-note" style="margin-top:0">The number of surfers is uncertain: the AusPlay survey counts five times fewer than Surf Life Saving. With AusPlay's numbers, the risk per surf session would rise to 1 in 10 million. In California, Ferretti and colleagues (2015) estimated 1 bite per 738 million swims and 1 per 17 million surfing days.</p>
-        </div>
-        <div class="callout">
-          <p class="eyebrow">18 January 2026</p>
-          <h3>127 mm of rain, three bites in two days</h3>
-          <p>That day, Sydney had its heaviest rain since 1988. Within 48 hours, bull sharks bit three people: at Nielsen Park (fatal), at Dee Why (a board bitten, the boy unhurt) and at North Steyne in Manly (a man badly injured).</p>
-          <p>That was no coincidence. Bull sharks move closer to beaches after more than 45 mm of rain, when the water is above 20 °C, especially a few hundred metres from river mouths (Smoothey et al., 2023). The risk is not spread evenly: it concentrates on days and places that can be predicted.</p>
-        </div>
-      </div>
-
-      <div class="split">
-        <div class="flow">
-          <h3>Nets and drones</h3>
-          <p>Since 1937, nets have been set from September to April at 51 beaches between Newcastle and Wollongong. In 2024/25 they caught 223 animals, 24 of them target sharks; 67% of the animals caught died. A 2024 study (Huveneers et al.) found no measurable difference in bites between netted and unnetted beaches since the 2000s.</p>
-          <p>Since late September 2026, 73 drones patrol 97 beaches, including all 38 of Sydney's ocean beaches, on top of 305 "SMART" drumlines that let sharks be tagged and released offshore.</p>
-        </div>
-        <div class="flow">
-          <h3>Drowning, the real danger at the beach</h3>
-          <p>On Sydney's coast, 101 people drowned in ten years, against two killed by sharks. In 2024/25, none of the 154 people who drowned on Australia's coast were swimming between the red and yellow flags during patrol hours.</p>
-          <p>In NSW, 63% of coastal drowning victims were more than a kilometre from a lifesaving service, 40% were caught in a rip and 88% were men. The flags do not protect against sharks: in June 2026 a swimmer was bitten at Coogee, less than 30 m from shore and between the flags. But they protect very well against drowning.</p>
-        </div>
       </div>
     </section>
 
@@ -508,6 +486,21 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
       <figure class="fig">
         <div class="fig-head">
           <div>
+            <p class="fig-title">From the city centre to the airport, in five capitals</p>
+            <p class="fig-sub">Risk of the car trip from the CBD to the main airport, compared with a flight on an Australian airline. In every city on this chart, the road is riskier than the plane.</p>
+          </div>
+          <div class="legend">
+            <span class="key"><i class="sq" style="--c:var(--fear)"></i>The flight</span>
+            <span class="key"><i class="sq" style="--c:var(--real)"></i>The drive</span>
+          </div>
+        </div>
+        <div class="bars" id="cities"></div>
+        <p class="fig-note">Approximate road distances from the CBD: Adelaide 7 km, Sydney 8 km, Brisbane 12 km, Perth 12 to 17 km depending on the terminal (14 km used here), Melbourne about 23 km. Flight: 1 in 80 million per boarding (Barnett 2024). Car: 2.5 deaths per billion passenger-kilometres.</p>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
             <p class="fig-title">Deaths per billion passenger-kilometres, by mode of transport</p>
             <p class="fig-sub">United States, 2000-2009. Logarithmic scale: per kilometre, motorcycles are 3,000 times deadlier than airliners.</p>
           </div>
@@ -528,6 +521,108 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
         <div class="flow">
           <h3>A bad year is still rare</h3>
           <p>2025 was a bad year: 394 deaths according to IATA, more than three quarters of them in two accidents, Air India 171 in Ahmedabad (260 deaths) and the Washington collision (67 deaths). Spread over about 5 billion passengers, that is still 1 death for nearly 13 million boardings. In 2023, IATA calculated that you would have to fly every day for 103,239 years to be in an accident that kills everyone on board.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sharks" aria-labelledby="sharks-t">
+      <div class="sec-head">
+        <p class="eyebrow">Sharks · Sydney and Australia</p>
+        <h2 id="sharks-t">Sharks in Sydney and across Australia</h2>
+        <p class="lede">Australia records about 20 unprovoked shark bites a year and two or three deaths; in 2025, that was a third of the world’s bites. Sydney has had a bad run, with three deaths in four years after 59 years with none. Per swim, the risk is still tiny, and far smaller than the risk of drowning on the same beaches.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>2.5 a year</b><span>shark deaths in Australia, 2016-2025 average, against 1,314 road deaths in 2025 alone</span></div>
+        <div class="stat"><b>1 in 840 million</b><span>chance of dying from a shark bite per ocean swim in Australia (estimate, 2010-2025)</span></div>
+        <div class="stat"><b>16 of 37</b><span>Australian shark deaths from 2010 to 2025 happened in Western Australia, home to about 11% of Australians</span></div>
+        <div class="stat"><b>50 to 1</b><span>drownings on Sydney’s coast for every shark death, 2015 to 2025 (101 against 2)</span></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Unprovoked shark bites, by year</p>
+            <p class="fig-sub" id="bite-sub">Australia: about 18 bites and 2.3 deaths a year (2010-2025), out of roughly 630 million visits to the coast.</p>
+          </div>
+          <div class="fig-tools">
+            <div class="seg-ctl" role="group" aria-label="Area">
+              <button type="button" id="bite-au" aria-pressed="true">Australia</button>
+              <button type="button" id="bite-nsw" aria-pressed="false">New South Wales</button>
+            </div>
+            <div class="legend">
+              <span class="key"><i class="sq" style="--c:var(--fear)"></i>Fatal</span>
+              <span class="key"><i class="sq" style="--c:var(--fear-soft)"></i>Not fatal</span>
+            </div>
+          </div>
+        </div>
+        <div class="cols" id="bite-cols" style="--h:190px"></div>
+        <p class="fig-note">Source: ASID v10, unprovoked bites, 2010-2025. Australia: 284 bites, 37 deaths. New South Wales: 125 bites, 11 deaths.</p>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Shark deaths by state, 2010-2025</p>
+            <p class="fig-sub">Unprovoked bites only. Western Australia has fewer bites than New South Wales but more deaths: 19% of its bites were fatal, against 9% in NSW.</p>
+          </div>
+        </div>
+        <div class="bars" id="states"></div>
+        <p class="fig-note">Source: ASID v10. The Northern Territory recorded no unprovoked bite over the period. In September 2026 a swimmer was killed at Sorrento Beach in Perth: the fifth shark death in Australia this year, and the second unprovoked one.</p>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Shark deaths in greater Sydney since the nets went in</p>
+            <p class="fig-sub">Each dot is one death, from 1937 to October 2026. Hover over a dot for the place and activity.</p>
+          </div>
+          <div class="legend">
+            <span class="key"><i style="--c:var(--fear)"></i>Unprovoked</span>
+            <span class="key"><i class="ring" style="--c:var(--fear)"></i>Provoked (spearfishing)</span>
+          </div>
+        </div>
+        <div class="tl-box" id="timeline"></div>
+        <ul class="tl-list">
+          <li><b>1940-1963: the harbour and the rivers</b>All nine deaths in this period were in the harbour, the bays or the Georges River, not on ocean beaches.</li>
+          <li><b>1963-2022: 59 years without a death</b>Before 2022, the last death on a Sydney ocean beach was in 1936, at South Steyne.</li>
+          <li><b>2022-2026: three deaths</b>A swimmer at Little Bay (white shark, 2022), a surfer at Long Reef (white shark, 2025), and a 12-year-old boy at Nielsen Park, Vaucluse (bull shark, January 2026).</li>
+        </ul>
+        <p class="fig-note">Sources: ASID v10 (Taronga, data to June 2026) and the list of fatal shark attacks in Australia. Taronga counts 43 deaths in Sydney since 1870.</p>
+      </figure>
+
+      <div class="split">
+        <div class="flow">
+          <h3>The risk per trip into the water</h3>
+          <p>To turn a number of attacks into a risk, you divide by exposure. About 16.6 million Australians visit the coast, 3.3 times a month on average: roughly 630 million visits a year. About 1.8 million surf, 46 sessions a year each.</p>
+          <div class="table-wrap"><table class="risk-table">
+            <thead><tr><th>Per trip</th><th class="n">Bite, Australia</th><th class="n">Death, Australia</th><th class="n">Death, NSW</th></tr></thead>
+            <tbody>
+              <tr><td>Ocean swim, shark</td><td class="n">1 in 137 M</td><td class="n">1 in 840 M</td><td class="n">1 in 940 M</td></tr>
+              <tr><td>Surf session, shark</td><td class="n">1 in 8 M</td><td class="n">1 in 61 M</td><td class="n">1 in 73 M</td></tr>
+              <tr><td>Coastal visit, drowning</td><td class="n">·</td><td class="n">1 in 4.1 M</td><td class="n">1 in 4.2 M</td></tr>
+              <tr><td>Surf session, all causes</td><td class="n">·</td><td class="n">1 in 8.9 M</td><td class="n">·</td></tr>
+            </tbody>
+          </table></div>
+          <p class="fig-note" style="margin-top:0">The number of surfers is uncertain: the AusPlay survey counts five times fewer than Surf Life Saving. With AusPlay’s numbers, the risk per surf session would rise to about 1 in 12 million. In California, Ferretti and colleagues (2015) estimated 1 bite per 738 million swims and 1 per 17 million surfing days.</p>
+        </div>
+        <div class="callout">
+          <p class="eyebrow">18 January 2026</p>
+          <h3>127 mm of rain, three bites in two days</h3>
+          <p>That day, Sydney had its heaviest rain since 1988. Within 48 hours, bull sharks bit three people: at Nielsen Park (fatal), at Dee Why (a board bitten, the boy unhurt) and at North Steyne in Manly (a man badly injured).</p>
+          <p>That was no coincidence. Bull sharks move closer to beaches after more than 45 mm of rain, when the water is above 20 °C, especially a few hundred metres from river mouths (Smoothey et al., 2023). The risk is not spread evenly: it concentrates on days and places that can be predicted.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="flow">
+          <h3>Nets and drones</h3>
+          <p>Since 1937, nets have been set from September to April at 51 beaches between Newcastle and Wollongong. In 2024/25 they caught 223 animals, 24 of them target sharks; 67% of the animals caught died. A 2024 study (Huveneers et al.) found no measurable difference in bites between netted and unnetted beaches since the 2000s.</p>
+          <p>Since late September 2026, 73 drones patrol 97 beaches, including all 38 of Sydney's ocean beaches, on top of 305 "SMART" drumlines that let sharks be tagged and released offshore.</p>
+        </div>
+        <div class="flow">
+          <h3>Drowning, the real danger at the beach</h3>
+          <p>On Sydney’s coast, 101 people drowned in ten years, against two killed by sharks. Across Australia, 313 people drowned in 2025/26, 151 of them on the coast, against two or three shark deaths in a typical year. In 2024/25, none of the 154 people who drowned on Australia's coast were swimming between the red and yellow flags during patrol hours.</p>
+          <p>In NSW, 63% of coastal drowning victims were more than a kilometre from a lifesaving service, 40% were caught in a rip and 88% were men. The flags do not protect against sharks: in June 2026 a swimmer was bitten at Coogee, less than 30 m from shore and between the flags. But they protect very well against drowning.</p>
         </div>
       </div>
     </section>
@@ -602,60 +697,16 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
       <div class="factors" id="factor-list"></div>
     </section>
 
-    <section id="calculator" aria-labelledby="calc-t">
-      <div class="sec-head">
-        <p class="eyebrow">Calculator</p>
-        <h2 id="calc-t">Your year in micromorts</h2>
-        <p class="lede">Enter your habits. The calculator adds up the year's risks and compares them with an average Australian's. The starting values are an example: a Sydney surfer who flies six times a year.</p>
-      </div>
-      <div class="calc">
-        <form class="calc-in" id="calc-form">
-          <div class="field">
-            <label for="c-swim">Ocean swims per year <output id="c-swim-out" for="c-swim">40</output></label>
-            <input type="range" id="c-swim" min="0" max="250" step="5" value="40">
-          </div>
-          <label class="check" for="c-flags"><input type="checkbox" id="c-flags" checked><span>I swim between the flags, during patrol hours</span></label>
-          <div class="field">
-            <label for="c-surf">Surf sessions per year <output id="c-surf-out" for="c-surf">50</output></label>
-            <input type="range" id="c-surf" min="0" max="300" step="5" value="50">
-          </div>
-          <div class="field">
-            <label for="c-fly">Flights per year <output id="c-fly-out" for="c-fly">6</output></label>
-            <input type="range" id="c-fly" min="0" max="80" step="1" value="6">
-            <small>A one-way trip counts as one flight. A stopover counts as two.</small>
-          </div>
-          <div class="field">
-            <label for="c-air">Usual airline</label>
-            <select id="c-air">
-              <option value="t1">Tiers 1 and 2 (Qantas, Virgin Australia, Europe…)</option>
-              <option value="world">World average</option>
-              <option value="t3">Tier 3 (rest of the world)</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="c-car">Kilometres by car per week <output id="c-car-out" for="c-car">150 km</output></label>
-            <input type="range" id="c-car" min="0" max="1500" step="10" value="150">
-          </div>
-        </form>
-        <div class="calc-out">
-          <div class="total"><b id="c-total">·</b><span id="c-total-sub">micromorts per year for these activities</span></div>
-          <div class="bars" id="calc-bars"></div>
-          <p class="calc-says" id="calc-says"></p>
-          <p class="fig-note" style="margin-top:0">The grey benchmarks are national averages across all ages. An average Australian's all-cause risk is about 6,700 micromorts a year; it depends mostly on age.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="method" aria-labelledby="method-t">
       <div class="sec-head">
         <p class="eyebrow">Method and limits</p>
         <h2 id="method-t">How the numbers are calculated</h2>
       </div>
       <ul class="method">
-        <li><b>Sharks, swimming.</b> 3 swimmers killed in NSW from 2010 to 2025 (0.19 a year), divided by about 177 million swimmer visits a year (5.5 million adults, 3.6 visits a month, 75% of them swimmers, Surf Life Saving NSW survey 2023). If swimmers only go in the water on one visit in two, the risk doubles.</li>
-        <li><b>Sharks, surfing.</b> 7 board riders killed in NSW from 2010 to 2025, divided by 32 million sessions a year (700,000 surfers, 45.7 sessions a year according to Lawes et al. 2023). With AusPlay's participation figures, the risk would be about seven times higher.</li>
+        <li><b>Sharks, swimming.</b> 9 swimmers killed in Australia from 2010 to 2025 (0.56 a year), divided by about 470 million swimmer visits a year: roughly 630 million coastal visits (Surf Life Saving Australia, 2025), 75% of them by swimmers as in the NSW survey. If swimmers only go in the water on one visit in two, the risk doubles. NSW alone gives a similar figure (3 deaths, 177 million swims a year).</li>
+        <li><b>Sharks, surfing.</b> 21 board riders killed in Australia from 2010 to 2025, divided by 80 million sessions a year (1.76 million surfers, 45.7 sessions a year according to Lawes et al. 2023). With AusPlay’s participation figures, the risk would be about five times higher.</li>
         <li><b>Surfing, all causes.</b> 0.06 deaths per million hours of surfing (Lawes et al. 2023, Australia), times 1.88 hours per session.</li>
-        <li><b>Drowning.</b> About 56 coastal drownings a year in NSW (2022 to 2025), divided by 238 million visits. Patrolled visits (51%) account for almost no deaths, so the risk outside patrolled areas is about twice the average.</li>
+        <li><b>Drowning.</b> About 152 coastal drownings a year in Australia (2023 to 2026), divided by 630 million visits; NSW gives the same rate (56 a year for 238 million visits). Patrolled visits (51%) account for almost no deaths, so the risk outside patrolled areas is about twice the average.</li>
         <li><b>Car.</b> 0.50 deaths per 100 million vehicle-kilometres (BITRE), 1.57 occupants per car, about two thirds of deaths among vehicle occupants: about 2.5 deaths per billion passenger-kilometres, close to the European figure.</li>
         <li><b>Flying.</b> Deaths per boarding from Barnett and Reig Torra (2024) for 2018-2022: 1 in 80 million (tiers 1 and 2), 1 in 13.7 million (world), 1 in 2.2 million (tier 3).</li>
         <li><b>Daily benchmarks.</b> Annual deaths divided by 27.9 million people (ABS, March 2026), then by 365. These are averages across all ages: a thirty-year-old's all-cause risk is far below 18 micromorts a day.</li>
@@ -675,6 +726,8 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
             <li><a href="https://zenodo.org/records/22262542">Australian Shark-Incident Database v10</a>, Taronga, 2026</li>
             <li><a href="https://www.taronga.org.au/siteassets/wildlife--conservation/tisl/shark-incident-database/asid-2025-summary-1.pdf">ASID 2025 summary</a>, Taronga</li>
             <li><a href="https://www.surflifesaving.com.au/wp-content/uploads/sites/2/2023/11/New-South-Wales-Coastal-Safety-Report-2023.pdf">NSW Coastal Safety Report 2023</a>, Surf Life Saving NSW</li>
+            <li><a href="https://lsv.com.au/media-centre/campaigns/stop-look-stay-alive">Life Saving Victoria</a>, 630 million coastal visits (secondary source)</li>
+            <li><a href="https://www.cbsnews.com/news/shark-attack-swimmer-killed-australia-horrified-beachgoers/">CBS News, September 2026</a>, Sorrento Beach</li>
             <li><a href="https://doi.org/10.1371/journal.pone.0285928">Lawes et al. 2023</a>, PLoS ONE (surfing)</li>
             <li><a href="https://www.ausport.gov.au/clearinghouse/research/archive/surfing">AusPlay, surfing</a>, Australian Sports Commission</li>
             <li><a href="https://doi.org/10.1890/150109">Ferretti et al. 2015</a>, California</li>
@@ -784,8 +837,8 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
 
   /* ---------- Base risks, in micromorts ---------- */
   var R = {
-    swim: 0.00106, swimHi: 0.00212,        // shark, per swim, NSW 2010-2025
-    surf: 0.0137, surfHi: 0.098,           // shark, per surf session
+    swim: 0.00119, swimHi: 0.00238,        // shark, per swim, Australia 2010-2025
+    surf: 0.0163, surfHi: 0.086,           // shark, per surf session, Australia
     surfAll: 0.113,                        // surfing, all causes (Lawes 2023)
     drownOut: 0.48,                        // drowning, unpatrolled visit
     carKm: 0.0025,                         // car, per passenger-km
@@ -880,10 +933,11 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
 
   /* ---------- 1. The risk scale ---------- */
   var ladder = [
-    { l: "One ocean swim", s: "shark, NSW", v: R.swim, hi: R.swimHi, k: "fear", src: "ASID v10, SLS NSW 2023" },
+    { l: "One ocean swim", s: "shark, Australia", v: R.swim, hi: R.swimHi, k: "fear", src: "ASID v10, SLSA 2025" },
     { l: "One flight, tiers 1 and 2", s: "Qantas, Virgin, Europe, North America…", v: R.fly.t1, k: "fear", src: "Barnett 2024, 2018-2022" },
-    { l: "One surf session", s: "shark, NSW", v: R.surf, hi: R.surfHi, k: "fear", src: "ASID v10, Lawes 2023, AusPlay" },
+    { l: "One surf session", s: "shark, Australia", v: R.surf, hi: R.surfHi, k: "fear", src: "ASID v10, Lawes 2023, AusPlay" },
     { l: "8 km by taxi", s: "Sydney CBD → airport", v: 8 * R.carKm, k: "real", src: "BITRE, this site's calculation" },
+    { l: "23 km by taxi", s: "Melbourne CBD → airport", v: 23 * R.carKm, k: "real", src: "BITRE, this site's calculation" },
     { l: "One flight, world average", s: "2018-2022", v: R.fly.world, k: "fear", src: "Barnett 2024" },
     { l: "30 km by car", s: "return trip to the beach", v: 30 * R.carKm, k: "real", src: "BITRE, this site's calculation" },
     { l: "One surf session", s: "all causes", v: R.surfAll, k: "real", src: "Lawes 2023" },
@@ -1001,21 +1055,37 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
     root.appendChild(plot);
     root.appendChild(xs);
   }
-  var nsw = [[2010, 6, 0], [2011, 4, 0], [2012, 7, 0], [2013, 3, 1], [2014, 5, 2], [2015, 14, 1], [2016, 12, 0], [2017, 5, 0],
-    [2018, 9, 0], [2019, 8, 0], [2020, 14, 2], [2021, 8, 2], [2022, 11, 1], [2023, 5, 0], [2024, 4, 0], [2025, 10, 2]];
+  // [year, unprovoked bites, deaths], ASID v10
+  var BITES = {
+    au: { data: [[2010, 14, 1], [2011, 9, 4], [2012, 18, 2], [2013, 9, 2], [2014, 13, 2], [2015, 22, 1], [2016, 21, 2], [2017, 17, 1],
+      [2018, 21, 1], [2019, 15, 0], [2020, 28, 7], [2021, 20, 4], [2022, 20, 1], [2023, 22, 4], [2024, 13, 0], [2025, 22, 5]],
+      max: 30, ticks: [0, 10, 20, 30], peak: [2020],
+      sub: "Australia: about 18 bites and 2.3 deaths a year (2010-2025), out of roughly 630 million visits to the coast." },
+    nsw: { data: [[2010, 6, 0], [2011, 4, 0], [2012, 7, 0], [2013, 3, 1], [2014, 5, 2], [2015, 14, 1], [2016, 12, 0], [2017, 5, 0],
+      [2018, 9, 0], [2019, 8, 0], [2020, 14, 2], [2021, 8, 2], [2022, 11, 1], [2023, 5, 0], [2024, 4, 0], [2025, 10, 2]],
+      max: 16, ticks: [0, 5, 10, 15], peak: [2015, 2020],
+      sub: "New South Wales: about 8 bites a year and fewer than one death, out of about 238 million visits to the coast." }
+  };
+  var biteArea = "au";
   var narrow = window.matchMedia("(max-width: 640px)");
-  function drawNsw() {
-    columns(document.getElementById("nsw-cols"), nsw.map(function (r) {
+  function drawBites() {
+    var b = BITES[biteArea];
+    document.getElementById("bite-sub").textContent = b.sub;
+    document.getElementById("bite-au").setAttribute("aria-pressed", String(biteArea === "au"));
+    document.getElementById("bite-nsw").setAttribute("aria-pressed", String(biteArea === "nsw"));
+    columns(document.getElementById("bite-cols"), b.data.map(function (r) {
       return {
         x: narrow.matches ? "’" + String(r[0]).slice(2) : String(r[0]),
         segs: [{ v: r[2], k: "fear" }, { v: r[1] - r[2], k: "fear-soft" }],
-        top: r[0] === 2015 || r[0] === 2020 ? String(r[1]) : "",
+        top: b.peak.indexOf(r[0]) >= 0 ? String(r[1]) : "",
         tip: r[0] + "\n" + r[1] + " bite" + (r[1] > 1 ? "s" : "") + ", " + r[2] + " fatal"
       };
-    }), { max: 16, ticks: [0, 5, 10, 15] });
+    }), { max: b.max, ticks: b.ticks });
   }
-  drawNsw();
-  if (narrow.addEventListener) narrow.addEventListener("change", drawNsw);
+  document.getElementById("bite-au").addEventListener("click", function () { biteArea = "au"; drawBites(); });
+  document.getElementById("bite-nsw").addEventListener("click", function () { biteArea = "nsw"; drawBites(); });
+  drawBites();
+  if (narrow.addEventListener) narrow.addEventListener("change", drawBites);
 
   var barnett = [["1968-1977", 350000], ["1978-1987", 750000], ["1988-1997", 1.3e6], ["1998-2007", 2.7e6], ["2008-2017", 7.9e6], ["2018-2022", 13.7e6]];
   columns(document.getElementById("barnett-cols"), barnett.map(function (r) {
@@ -1087,11 +1157,32 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
   });
   bars(document.getElementById("deaths"), causes, 16326);
 
+  // [state, unprovoked deaths, unprovoked bites], ASID v10, 2010-2025
+  var states = [["Western Australia", 16, 85], ["New South Wales", 11, 125], ["Queensland", 5, 38], ["South Australia", 5, 21],
+    ["Victoria", 0, 13], ["Tasmania", 0, 2], ["Northern Territory", 0, 0]];
+  bars(document.getElementById("states"), states.map(function (s) {
+    return {
+      l: s[0], s: s[2] + " bite" + (s[2] === 1 ? "" : "s"), v: s[1], k: "fear", val: s[1] + (s[1] === 1 ? " death" : " deaths"),
+      tip: s[0] + ", 2010-2025\n" + s[1] + " deaths, " + s[2] + " unprovoked bites" + (s[2] ? "\n" + NF(2).format(s[1] / s[2] * 100) + "% of bites fatal" : "")
+    };
+  }), 16);
+
+  // CBD to the main airport, approximate road km
+  var cities = [["Adelaide", 7], ["Sydney", 8], ["Brisbane", 12], ["Perth", 14], ["Melbourne", 23]];
+  var cityRows = [{ l: "The flight", s: "Australian airline", v: R.fly.t1, k: "fear", val: "×1", tip: "The flight\n" + oneIn(R.fly.t1) + " per boarding" }];
+  cities.forEach(function (c) {
+    var v = c[1] * R.carKm;
+    cityRows.push({ l: c[0], s: "about " + c[1] + " km by road", v: v, k: "real", val: "×" + NF(2).format(v / R.fly.t1),
+      tip: c[0] + " CBD → airport, about " + c[1] + " km\n" + oneIn(v) + "\n" + NF(2).format(v / R.fly.t1) + " times the risk of the flight" });
+  });
+  bars(document.getElementById("cities"), cityRows, 23 * R.carKm);
+
   /* ---------- 6. Risk factors ---------- */
   var factorBlocks = [
     {
-      t: "Sharks", sub: "per trip into the water, New South Wales", rows: [
-        { l: "Surfing rather than swimming", s: "per trip, up to ×90 depending on surfer numbers", v: 13, q: "indicative", src: "This site's calculation: ASID 2010-2025, SLS NSW, Lawes 2023" },
+      t: "Sharks", sub: "per trip into the water, Australia", rows: [
+        { l: "Surfing rather than swimming", s: "per trip, up to ×70 depending on surfer numbers", v: 14, q: "indicative", src: "This site's calculation: ASID 2010-2025, SLSA, Lawes 2023" },
+        { l: "Western Australia vs national average", s: "shark deaths per resident, 2010-2025", v: 4, q: "weak", src: "43% of Australian shark deaths 2010-2025 for about 11% of the population (ASID v10). Not adjusted for time in the water." },
         { l: "At dawn, 5 am to 8 am", s: "per hour, compared with daytime", v: 1.6, q: "weak", src: "25% of bites in 3 hours, against 42% in 8 daytime hours (ASID, NSW 2000-2025). Does not count people in the water." },
         { l: "Late afternoon, 4 pm to 8 pm", s: "per hour, compared with daytime", v: 1.5, q: "weak", src: "32% of bites in 4 hours (ASID, NSW 2000-2025). Fewer people swim at these times, so the real effect is probably stronger." },
         { l: "Netted beach", s: "since the 2000s", v: 1, q: "indicative", src: "Huveneers et al. 2024: no detectable difference between netted and unnetted beaches." },

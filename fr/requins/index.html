@@ -1,0 +1,1367 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Peur bleue · Requins</title>
+<meta name="description" content="Un aller-retour de 30 km en voiture jusqu’à la plage pèse environ 60 fois le risque requin d’une baignade en mer en Australie : 1 sur 13 millions contre 1 sur 840 millions.">
+<meta property="og:title" content="La route de la plage est plus dangereuse que le requin.">
+<meta property="og:description" content="×60 · Un aller-retour de 30 km en voiture jusqu’à la plage pèse environ 60 fois le risque requin d’une baignade en mer en Australie : 1 sur 13 millions contre 1 sur 840 millions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://robinlietar.github.io/peur-bleue/fr/requins/">
+<link rel="canonical" href="https://robinlietar.github.io/peur-bleue/fr/requins/">
+<link rel="alternate" hreflang="fr" href="https://robinlietar.github.io/peur-bleue/fr/requins/">
+<link rel="alternate" hreflang="en" href="https://robinlietar.github.io/peur-bleue/sharks/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='6' width='28' height='10' rx='2' fill='%23d2352b'/%3E%3Crect x='2' y='16' width='28' height='10' rx='2' fill='%23f2c230'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout : une colonne de lecture de 40rem dans un cadre de 72rem ; les figures prennent toute la largeur ;
+   une seule unité (le micromort) et une échelle logarithmique servent de fil conducteur. */
+:root{
+  --bg:#f4f7f8;
+  --surface:#ffffff;
+  --ink:#0b1f2e;
+  --ink-2:#465a67;
+  --muted:#667985;
+  --rule:#d8e1e6;
+  --rule-strong:#b3c2cb;
+  --hover:rgba(47,111,181,.07);
+  --fear:#2f6fb5;
+  --fear-soft:#a9c4e3;
+  --real:#d2352b;
+  --safe:#1f8a6e;
+  --ref:#8796a0;
+  --flag-red:#d2352b;
+  --flag-yellow:#f2c230;
+  --hl:rgba(242,194,48,.45);
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-data:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1a24;--surface:#112431;--ink:#e7eef2;--ink-2:#a9bac5;--muted:#8697a2;--rule:#1f3443;--rule-strong:#335061;
+    --hover:rgba(79,147,214,.10);--fear:#4f93d6;--fear-soft:#2d5378;--real:#e65a4c;--safe:#2a9d7c;--ref:#6f818c;
+    --flag-red:#e65a4c;--flag-yellow:#e0b22a;--hl:rgba(224,178,42,.35);color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1a24;--surface:#112431;--ink:#e7eef2;--ink-2:#a9bac5;--muted:#8697a2;--rule:#1f3443;--rule-strong:#335061;
+  --hover:rgba(79,147,214,.10);--fear:#4f93d6;--fear-soft:#2d5378;--real:#e65a4c;--safe:#2a9d7c;--ref:#6f818c;
+  --flag-red:#e65a4c;--flag-yellow:#e0b22a;--hl:rgba(224,178,42,.35);color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+p,ul,ol,figure{margin:0}
+a{color:inherit;text-decoration-color:var(--fear);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--fear);outline-offset:2px;border-radius:3px}
+
+.wrap{max-width:72rem;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.flow{display:grid;gap:1em;max-width:40rem}
+.flow p{min-width:0}
+.eyebrow{font-family:var(--f-data);font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.num{font-variant-numeric:tabular-nums}
+.mark{background:linear-gradient(transparent 64%,var(--hl) 64%,var(--hl) 92%,transparent 92%)}
+
+/* En-tête */
+.top{border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:.6rem 1.5rem;flex-wrap:wrap;padding-block:.9rem}
+.brand{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--f-display);font-weight:800;font-stretch:115%;font-size:1.1rem;letter-spacing:-.01em;text-decoration:none}
+.flagmark{width:22px;height:15px;display:grid;grid-template-rows:1fr 1fr;border-radius:2px;overflow:hidden;flex:none}
+.flagmark i:first-child{background:var(--flag-red)}
+.flagmark i:last-child{background:var(--flag-yellow)}
+.nav{display:flex;flex-wrap:wrap;gap:.2rem 1.1rem;font-family:var(--f-display);font-size:.9rem}
+.nav a{text-decoration:none;color:var(--ink-2)}
+.nav a:hover{color:var(--ink)}
+.nav a.lang{color:var(--ink);font-weight:650}
+
+/* Ouverture */
+.hero{padding-block:3.25rem 1rem}
+.hero h1{font-weight:800;font-stretch:112%;font-size:clamp(2.2rem,3.9vw + 1rem,4.3rem);line-height:1.03;letter-spacing:-.025em;max-width:17ch;margin-top:.9rem}
+.lede{font-size:clamp(1.12rem,1vw + .9rem,1.3rem);line-height:1.5;color:var(--ink-2);max-width:40rem;margin-top:1.3rem}
+.unit{display:flex;gap:.9rem;align-items:baseline;margin-top:1.6rem;max-width:40rem;font-family:var(--f-display);font-size:.95rem;line-height:1.45;color:var(--ink-2)}
+.unit .eyebrow{flex:none;color:var(--ink)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,17rem);column-gap:3.5rem;align-items:start;margin-top:.9rem}
+.hero-grid h1{margin-top:0;grid-column:1;grid-row:1}
+.hero-grid .hero-num{grid-column:2;grid-row:1 / span 2;align-self:end}
+.hero-grid .lede{grid-column:1;grid-row:2}
+@media (max-width:860px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero-grid h1,.hero-grid .hero-num,.hero-grid .lede{grid-column:1;grid-row:auto;align-self:start}.hero-grid .hero-num{margin-top:1.4rem}}
+.hero-num{display:grid;gap:.55rem;border-top:2px solid var(--ink);padding-top:.9rem;align-content:start}
+.hero-num b{font-family:var(--f-display);font-weight:800;font-stretch:108%;font-size:clamp(3.4rem,4.5vw + 1.6rem,5.6rem);line-height:.95;letter-spacing:-.03em;color:var(--real)}
+.hero-num span{font-family:var(--f-display);font-size:.92rem;line-height:1.45;color:var(--ink-2)}
+.alt{margin-top:1.1rem;font-family:var(--f-display);font-size:.92rem;color:var(--ink-2)}
+.alt a{color:var(--ink);font-weight:600}
+.seg-ctl{display:inline-flex;border:1px solid var(--rule-strong);border-radius:6px;overflow:hidden;font-family:var(--f-display);font-size:.85rem}
+.seg-ctl button{font:inherit;background:transparent;color:var(--ink-2);border:0;padding:.35rem .8rem;cursor:pointer}
+.seg-ctl button + button{border-left:1px solid var(--rule-strong)}
+.seg-ctl button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.fig-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.2rem}
+
+/* Sections */
+section{padding-block:4.5rem 0}
+.sec-head{display:grid;gap:.7rem;margin-bottom:1.6rem;max-width:44rem}
+.sec-head h2{font-weight:750;font-stretch:108%;font-size:clamp(1.75rem,2.4vw + 1rem,2.6rem);line-height:1.08;letter-spacing:-.018em}
+.sec-head .lede{margin-top:0;font-size:1.15rem}
+h3{font-weight:700;font-stretch:104%;font-size:1.15rem;line-height:1.25}
+
+/* Chiffres clés */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;margin-top:2rem}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:460px){.stats{grid-template-columns:minmax(0,1fr)}}
+.stat{border-top:2px solid var(--ink);padding-top:.8rem;display:grid;gap:.4rem;align-content:start}
+.stat b{font-family:var(--f-display);font-weight:700;font-size:clamp(1.55rem,1.8vw + .9rem,2.15rem);line-height:1.05;letter-spacing:-.012em}
+.stat span{font-family:var(--f-display);font-size:.88rem;color:var(--ink-2);line-height:1.42}
+
+/* Figures */
+.fig{margin-top:2.75rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
+.fig-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:.75rem 2rem;margin-bottom:1.2rem}
+.fig-head > div{min-width:0;max-width:46rem}
+.fig-title{font-family:var(--f-display);font-weight:700;font-size:1.12rem;font-stretch:104%;line-height:1.3}
+.fig-sub{font-family:var(--f-display);font-size:.9rem;color:var(--ink-2);margin-top:.25rem;line-height:1.45}
+.legend{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;font-family:var(--f-display);font-size:.85rem;color:var(--ink-2)}
+.key{display:inline-flex;align-items:center;gap:.4rem}
+.key i{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+.key i.sq{border-radius:2px}
+.key i.ring{background:transparent;box-shadow:inset 0 0 0 2px var(--c)}
+.fig-note{font-family:var(--f-display);font-size:.8rem;color:var(--muted);margin-top:1rem;max-width:56rem;line-height:1.5}
+.fig-note a{color:var(--ink-2)}
+details{margin-top:.9rem}
+details summary{cursor:pointer;font-family:var(--f-display);font-size:.85rem;color:var(--ink-2);width:max-content;max-width:100%}
+.table-wrap{overflow-x:auto;margin-top:.6rem}
+table{border-collapse:collapse;font-family:var(--f-display);font-size:.84rem;width:100%;min-width:36rem}
+th,td{text-align:left;padding:.45rem .6rem;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:600;color:var(--ink-2)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* Graphique à points sur échelle logarithmique */
+.lp{font-family:var(--f-display);font-size:.9rem}
+.lp-row,.lp-axis{display:grid;grid-template-columns:minmax(0,17rem) minmax(0,1fr) 7.6rem;column-gap:1.1rem;align-items:center}
+.lp-row{padding-block:.42rem;border-radius:4px;cursor:default}
+.lp-row:hover,.lp-row:focus-visible{background:var(--hover)}
+.lp-label{min-width:0;line-height:1.25}
+.lp-label small{display:block;color:var(--ink-2);font-size:.78rem;margin-top:.1rem}
+.lp-track{position:relative;height:22px;min-width:0}
+.lp-tick{position:absolute;top:0;bottom:0;width:1px;background:var(--rule)}
+.lp-tick.strong{background:var(--rule-strong)}
+.lp-range{position:absolute;top:50%;height:4px;margin-top:-2px;border-radius:2px;background:var(--c);opacity:.35}
+.lp-dot{position:absolute;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px var(--bg)}
+.lp-dot.zero{background:var(--bg);box-shadow:inset 0 0 0 2px var(--c),0 0 0 2px var(--bg)}
+.lp-row:hover .lp-dot,.lp-row:focus-visible .lp-dot{transform:scale(1.2)}
+.lp-val{text-align:right;font-variant-numeric:tabular-nums;font-size:.86rem;white-space:nowrap;min-width:0}
+.lp-val small{display:block;color:var(--ink-2);font-size:.74rem}
+.lp-axis{padding-bottom:.3rem;border-bottom:1px solid var(--rule)}
+.lp-axis .lp-track{height:1.3rem}
+.lp-axis .lp-track span{position:absolute;top:0;transform:translateX(-50%);font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.lp-axis .lp-track span.l{transform:none}
+.lp-axis .lp-track span.r{transform:translateX(-100%)}
+.lp-axis .cap{font-size:.74rem;color:var(--muted)}
+.chip{display:inline-block;font-family:var(--f-data);font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;padding:.05rem .35rem;border-radius:3px;border:1px solid var(--rule-strong);color:var(--ink-2);margin-top:.15rem}
+.chip.solide{border-color:var(--ink-2);color:var(--ink)}
+.chip.faible{border-style:dashed}
+.lp-val small.chip{display:inline-block}
+@media (max-width:640px){
+  .lp-row,.lp-axis{grid-template-columns:minmax(0,1fr) 5.9rem}
+  .lp-label{grid-column:1 / -1;margin-bottom:.3rem}
+  .lp-axis .lp-label{display:none}
+  .lp-axis .lp-track span.minor{display:none}
+}
+
+/* Barres horizontales */
+.bars{font-family:var(--f-display);font-size:.9rem}
+.b-row{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr) 6.4rem;column-gap:1.1rem;align-items:center;padding-block:.34rem;border-radius:4px}
+.b-row:hover,.b-row:focus-visible{background:var(--hover)}
+.b-label{min-width:0;line-height:1.25}
+.b-label small{display:block;color:var(--ink-2);font-size:.76rem}
+.b-track{position:relative;height:14px;min-width:0}
+.b-bar{position:absolute;left:0;top:0;bottom:0;background:var(--c);border-radius:0 4px 4px 0;min-width:1px}
+.b-bar.none{min-width:0}
+.b-val{text-align:right;font-variant-numeric:tabular-nums;font-size:.86rem;white-space:nowrap}
+@media (max-width:640px){
+  .b-row{grid-template-columns:minmax(0,1fr) 5.4rem}
+  .b-label{grid-column:1 / -1;margin-bottom:.25rem}
+}
+
+/* Colonnes */
+.cols{display:grid;grid-template-columns:2rem minmax(0,1fr);column-gap:.5rem;font-family:var(--f-display)}
+.cols-y{position:relative;height:var(--h)}
+.cols-y span{position:absolute;right:0;transform:translateY(50%);font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.cols-plot{position:relative;height:var(--h);display:flex;align-items:flex-end;gap:2px;border-bottom:1px solid var(--rule-strong)}
+.cols-grid{position:absolute;left:0;right:0;height:1px;background:var(--rule)}
+.col{position:relative;flex:1 1 0;min-width:0;height:100%;display:flex;flex-direction:column-reverse;align-items:center;gap:2px;border-radius:3px}
+.col:hover,.col:focus-visible{background:var(--hover)}
+.seg{width:min(24px,72%);background:var(--c);flex:none}
+.seg.top{border-radius:4px 4px 0 0}
+.col-top{font-size:.74rem;color:var(--ink-2);font-variant-numeric:tabular-nums;text-align:center;line-height:1.15;margin-bottom:.2rem;max-width:100%}
+.cols-x{grid-column:2;display:flex;gap:2px;margin-top:.35rem}
+.cols-x span{flex:1 1 0;min-width:0;text-align:center;font-size:.7rem;color:var(--muted);font-variant-numeric:tabular-nums;line-height:1.25}
+
+/* Chronologie */
+.tl-box{position:relative;height:170px;margin-inline:10px}
+.tl-axis{position:absolute;left:0;right:0;top:120px;height:1px;background:var(--rule-strong)}
+.tl-year{position:absolute;top:128px;transform:translateX(-50%);font-family:var(--f-display);font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl-dot{position:absolute;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--fear);box-shadow:0 0 0 2px var(--bg);cursor:default}
+.tl-dot.provoked{background:var(--bg);box-shadow:inset 0 0 0 2px var(--fear),0 0 0 2px var(--bg)}
+.tl-dot:hover,.tl-dot:focus-visible{transform:scale(1.25)}
+.tl-gap{position:absolute;top:58px;height:10px;border:1px solid var(--ink-2);border-bottom:0}
+.tl-gap span{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);font-family:var(--f-display);font-weight:700;font-size:.95rem;white-space:nowrap}
+.tl-net{position:absolute;top:8px;height:112px;width:0;border-left:1px solid var(--ink-2)}
+.tl-net span{position:absolute;left:6px;top:-2px;font-family:var(--f-display);font-size:.74rem;color:var(--ink-2);white-space:nowrap}
+.tl-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem 1.5rem;margin-top:1.4rem;padding:0;font-family:var(--f-display);font-size:.88rem;line-height:1.4}
+.tl-list li{list-style:none;border-top:1px solid var(--rule);padding-top:.55rem;color:var(--ink-2)}
+.tl-list b{display:block;color:var(--ink);font-weight:650}
+.tl-list ul{padding:0}
+@media (max-width:760px){.tl-list{grid-template-columns:minmax(0,1fr)}}
+
+/* Encadrés et cartes */
+.split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:2.5rem 3.5rem;margin-top:2.75rem;align-items:start}
+@media (max-width:860px){.split{grid-template-columns:minmax(0,1fr)}}
+.callout{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:1.3rem 1.4rem;display:grid;gap:.8rem}
+.callout h3{font-size:1.05rem}
+.callout p,.callout li{font-size:.98rem}
+.steps{display:grid;gap:.75rem;padding-left:1.3rem;margin:0}
+.steps li{padding-left:.25rem}
+.steps li::marker{font-family:var(--f-display);font-weight:700;color:var(--ink-2)}
+.risk-table{min-width:30rem}
+.bias{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.75rem 3rem;margin-top:2.25rem}
+@media (max-width:760px){.bias{grid-template-columns:minmax(0,1fr)}}
+.bias article{display:grid;gap:.45rem;align-content:start;border-top:1px solid var(--rule-strong);padding-top:.9rem}
+.bias p{font-size:1rem;color:var(--ink)}
+.bias .eyebrow{color:var(--ink-2)}
+
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem}
+@media (max-width:960px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts .fact:last-child{grid-column:span 2}}
+@media (max-width:600px){.facts{grid-template-columns:minmax(0,1fr)}.facts .fact:last-child{grid-column:auto}}
+.fact{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:1.1rem 1.2rem 1.2rem;display:grid;gap:.45rem;align-content:start}
+.fact b{font-family:var(--f-display);font-weight:800;font-stretch:110%;font-size:1.85rem;line-height:1.05;letter-spacing:-.012em}
+.fact p{font-size:.98rem;line-height:1.5}
+.fact small{font-family:var(--f-display);font-size:.76rem;color:var(--muted)}
+
+/* Facteurs de risque */
+.factors{display:grid;gap:2.6rem;margin-top:2rem}
+.factor-block{display:grid;grid-template-columns:minmax(0,1fr);gap:.9rem}
+.factor-block header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.4rem 1.5rem}
+.notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem 2.5rem;padding:0;margin-top:.4rem;font-size:.95rem;line-height:1.5;color:var(--ink-2)}
+.notes li{list-style:none;padding-left:1rem;position:relative}
+.notes li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--ink-2)}
+.notes b{color:var(--ink);font-weight:600}
+@media (max-width:760px){.notes{grid-template-columns:minmax(0,1fr)}}
+
+/* Calculateur */
+.calc{display:grid;grid-template-columns:minmax(0,21rem) minmax(0,1fr);gap:2rem 3.5rem;margin-top:2rem;align-items:start}
+@media (max-width:860px){.calc{grid-template-columns:minmax(0,1fr)}}
+.calc-in{display:grid;gap:1.25rem;background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:1.3rem 1.3rem 1.4rem}
+.field{display:grid;gap:.35rem;font-family:var(--f-display)}
+.field label,.field .lbl{font-weight:600;font-size:.93rem;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.field output{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink)}
+.field small{font-size:.78rem;color:var(--ink-2);line-height:1.4}
+input[type="range"]{width:100%;accent-color:var(--fear);margin:0}
+select{font:inherit;font-size:.9rem;color:var(--ink);background:var(--bg);border:1px solid var(--rule-strong);border-radius:4px;padding:.4rem .5rem;width:100%}
+.check{display:flex;gap:.55rem;align-items:flex-start;font-family:var(--f-display);font-size:.9rem;line-height:1.35}
+.check input{margin-top:.18rem;accent-color:var(--fear);flex:none}
+.calc-out{display:grid;gap:1.1rem;min-width:0}
+.total{font-family:var(--f-display);display:grid;gap:.3rem}
+.total b{font-weight:800;font-stretch:108%;font-size:clamp(1.9rem,2.4vw + 1rem,2.7rem);line-height:1;letter-spacing:-.015em}
+.total span{color:var(--ink-2);font-size:.95rem}
+.calc-says{font-size:1.02rem;max-width:40rem}
+
+.taxi{display:grid;gap:1rem}
+.taxi .field{max-width:26rem}
+.taxi .b-row{grid-template-columns:minmax(0,10rem) minmax(0,1fr) 5.6rem}
+@media (max-width:640px){.taxi .b-row{grid-template-columns:minmax(0,1fr) 5.4rem}}
+.taxi-res{font-family:var(--f-display);font-size:1rem;line-height:1.45}
+.taxi-res b{font-weight:800;font-size:1.35rem}
+
+/* Méthode et sources */
+.method{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem 2.5rem;padding:0;margin-top:1.5rem;font-size:.97rem;line-height:1.5}
+.method li{list-style:none;padding-left:1rem;position:relative}
+.method li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--ink-2)}
+@media (max-width:760px){.method{grid-template-columns:minmax(0,1fr)}}
+.sources{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem 2rem;margin-top:2rem;font-family:var(--f-display);font-size:.83rem;line-height:1.45}
+@media (max-width:960px){.sources{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.sources{grid-template-columns:minmax(0,1fr)}}
+.sources h3{font-size:.95rem;margin-bottom:.5rem}
+.sources ul{padding:0;display:grid;gap:.4rem}
+.sources li{list-style:none;color:var(--ink-2);overflow-wrap:anywhere}
+.sources a{color:var(--ink)}
+footer{margin-top:5rem;border-top:1px solid var(--rule)}
+footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-family:var(--f-display);font-size:.82rem;color:var(--ink-2)}
+
+#tip{position:fixed;z-index:30;pointer-events:none;max-width:19rem;background:var(--ink);color:var(--bg);font-family:var(--f-display);font-size:.8rem;line-height:1.45;padding:.5rem .7rem;border-radius:6px;white-space:pre-line;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+#tip b{font-weight:700}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#haut"><span class="flagmark" aria-hidden="true"><i></i><i></i></span>Peur bleue</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#echelle">L’échelle</a>
+      <a href="#calculateur">Calculateur</a>
+      <a href="#biais">Les biais</a>
+      <a href="#requins">Requins</a>
+      <a href="#avion">Avion</a>
+      <a href="#quotidien">Le quotidien</a>
+      <a href="#facteurs">Facteurs de risque</a>
+      <a href="#sources">Sources</a>
+      <a class="lang" href="../../sharks/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+  <div class="wrap">
+
+    <div class="hero">
+      <p class="eyebrow">Sydney et Australie · Octobre 2026 · Les peurs face aux chiffres</p>
+      <div class="hero-grid">
+        <h1>La <span class="mark">route</span> de la plage est plus dangereuse que le requin.</h1>
+        <aside class="hero-num" aria-label="Chiffre clé"><b>×60</b><span>Un aller-retour de 30 km en voiture jusqu’à la plage pèse environ 60 fois le risque requin d’une baignade en mer en Australie : 1 sur 13 millions contre 1 sur 840 millions.</span></aside>
+        <p class="lede">Et sur la même plage, la noyade est environ 200 fois plus probable qu’une morsure mortelle, sauf entre les drapeaux. On craint ce qui est rare et spectaculaire, on oublie ce qui tue chaque jour. Ce site place les deux sur la même échelle, avec les données de Sydney et du reste de l’Australie.</p>
+      </div>
+      <p class="unit"><span class="eyebrow">Unité</span><span>Le <b>micromort</b> (micro + mortalité) : une chance sur un million de mourir. 0,01 micromort, c’est une chance sur 100 millions. C’est l’unité de référence en analyse du risque, proposée par Ronald Howard (Stanford) en 1979 et popularisée par le statisticien David Spiegelhalter.</span></p>
+      <p class="alt">Version avion : <a href="../../fr/">Le taxi pour l’aéroport est plus dangereux que l’avion</a></p>
+    </div>
+
+    <figure class="fig" id="echelle">
+      <div class="fig-head">
+        <div>
+          <p class="fig-title">L’échelle des risques</p>
+          <p class="fig-sub">Risque de mourir, en micromorts. Échelle logarithmique : chaque graduation multiplie le risque par 10. Le trait clair montre la marge d’incertitude.</p>
+        </div>
+        <div class="legend">
+          <span class="key"><i style="--c:var(--fear)"></i>Ce qui fait peur</span>
+          <span class="key"><i style="--c:var(--real)"></i>Ce qui tue vraiment</span>
+          <span class="key"><i style="--c:var(--ref)"></i>Repère</span>
+        </div>
+      </div>
+      <div class="lp" id="ladder"></div>
+      <p class="fig-note">Requins : base australienne des incidents de requin (Taronga, ASID v10), Australie 2010-2025, rapportée à la fréquentation de la côte estimée par Surf Life Saving Australia. Avion : Barnett et Reig Torra (MIT, 2024), décès par embarquement 2018-2022. Voiture : environ 2,5 morts par milliard de kilomètres parcourus (estimation à partir de BITRE). Repères quotidiens : ABS 2024, AIHW 2025, BITRE 2025, rapportés à 27,9 millions d’habitants. Détail des calculs dans la section <a href="#methode">Méthode</a>.</p>
+      <details>
+        <summary>Voir les chiffres</summary>
+        <div class="table-wrap"><table id="ladder-table"><thead><tr><th>Activité</th><th class="n">Micromorts</th><th class="n">Une chance sur</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+      </details>
+    </figure>
+
+    <section id="calculateur" aria-labelledby="calc-t">
+      <div class="sec-head">
+        <p class="eyebrow">Calculateur</p>
+        <h2 id="calc-t">Votre année en micromorts</h2>
+        <p class="lede">Entrez vos habitudes. Le calculateur additionne les risques de l’année et les compare aux risques moyens d’un Australien. Les valeurs de départ sont un exemple : un surfeur de Sydney qui prend l’avion six fois par an.</p>
+      </div>
+      <div class="calc">
+        <form class="calc-in" id="calc-form">
+          <div class="field">
+            <label for="c-swim">Baignades en mer par an <output id="c-swim-out" for="c-swim">40</output></label>
+            <input type="range" id="c-swim" min="0" max="250" step="5" value="40">
+          </div>
+          <label class="check" for="c-flags"><input type="checkbox" id="c-flags" checked><span>Je me baigne entre les drapeaux, pendant la surveillance</span></label>
+          <div class="field">
+            <label for="c-surf">Sessions de surf par an <output id="c-surf-out" for="c-surf">50</output></label>
+            <input type="range" id="c-surf" min="0" max="300" step="5" value="50">
+          </div>
+          <div class="field">
+            <label for="c-fly">Vols par an <output id="c-fly-out" for="c-fly">6</output></label>
+            <input type="range" id="c-fly" min="0" max="80" step="1" value="6">
+            <small>Un aller simple compte pour un vol. Une escale compte pour deux.</small>
+          </div>
+          <div class="field">
+            <label for="c-air">Compagnie habituelle</label>
+            <select id="c-air">
+              <option value="t1">Groupes 1 et 2 (Qantas, Virgin Australia, Europe…)</option>
+              <option value="world">Moyenne mondiale</option>
+              <option value="t3">Groupe 3 (reste du monde)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-car">Kilomètres en voiture par semaine <output id="c-car-out" for="c-car">150 km</output></label>
+            <input type="range" id="c-car" min="0" max="1500" step="10" value="150">
+          </div>
+        </form>
+        <div class="calc-out">
+          <div class="total"><b id="c-total">·</b><span id="c-total-sub">micromorts par an pour ces activités</span></div>
+          <div class="bars" id="calc-bars"></div>
+          <p class="calc-says" id="calc-says"></p>
+          <p class="fig-note" style="margin-top:0">Les repères gris sont des moyennes nationales, tous âges confondus. Le risque toutes causes d’un Australien moyen est d’environ 6 700 micromorts par an ; il dépend surtout de l’âge.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="biais" aria-labelledby="biais-t">
+      <div class="sec-head">
+        <p class="eyebrow">Psychologie du risque</p>
+        <h2 id="biais-t">Pourquoi on a peur des mauvaises choses</h2>
+      </div>
+      <div class="flow">
+        <p>En 1978, Sarah Lichtenstein, Paul Slovic et leurs collègues ont demandé à des Américains d’estimer le nombre annuel de morts pour une quarantaine de causes. Les réponses suivaient une règle constante : les causes rares et spectaculaires étaient surestimées, les causes fréquentes et silencieuses sous-estimées. Même prévenus du biais, les participants ne parvenaient pas à le corriger.</p>
+        <p>Un an plus tard, Barbara Combs et Paul Slovic montraient que ces erreurs suivaient de près la place de chaque cause dans les journaux, avec une corrélation de 0,85 à 0,89. Nos peurs reflètent ce dont on parle, pas ce qui arrive.</p>
+      </div>
+      <div class="bias">
+        <article>
+          <p class="eyebrow">Heuristique de disponibilité</p>
+          <h3>Ce qui vient en tête paraît fréquent</h3>
+          <p>On juge la fréquence d’un événement à la facilité avec laquelle on s’en souvient. Un crash fait la une pendant une semaine. Les 3 à 4 morts quotidiens sur les routes australiennes n’y passent presque jamais.</p>
+        </article>
+        <article>
+          <p class="eyebrow">Risque redouté</p>
+          <h3>Brutal, collectif, incontrôlable</h3>
+          <p>Paul Slovic a montré que le caractère effrayant d’un risque pèse plus que sa probabilité. Le crash et l’attaque de requin cumulent tout : mort violente, imprévisible, sans prise sur l’événement.</p>
+        </article>
+        <article>
+          <p class="eyebrow">Illusion de contrôle</p>
+          <h3>Au volant, on se croit maître du risque</h3>
+          <p>Conduire donne un sentiment de contrôle que la cabine d’un avion ne donne pas. Par kilomètre parcouru, la voiture tue pourtant environ 100 fois plus que l’avion de ligne (États-Unis, 2000-2009).</p>
+        </article>
+        <article>
+          <p class="eyebrow">Oubli du dénominateur</p>
+          <h3>Compter les attaques ne suffit pas</h3>
+          <p>« Trois attaques en deux jours » frappe les esprits. La question utile est : sur combien de baignades ? Sans le nombre de personnes dans l’eau, un décompte d’attaques ne dit rien du risque individuel.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="requins" aria-labelledby="requins-t">
+      <div class="sec-head">
+        <p class="eyebrow">Requins · Sydney et Australie</p>
+        <h2 id="requins-t">Les requins, de Sydney à toute l’Australie</h2>
+        <p class="lede">L’Australie compte environ 20 morsures non provoquées par an et deux ou trois décès ; en 2025, c’était un tiers des morsures du monde. Sydney traverse une série noire : trois morts en quatre ans, après 59 ans sans aucun décès. Rapporté à chaque baignade, le risque reste minuscule, et bien plus faible que celui de la noyade sur les mêmes plages.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>2,5 par an</b><span>morts par requin en Australie, moyenne 2016-2025, contre 1 314 morts sur la route en 2025</span></div>
+        <div class="stat"><b>1 sur 840 millions</b><span>risque de mourir d’une morsure de requin, par baignade en mer en Australie (estimation 2010-2025)</span></div>
+        <div class="stat"><b>16 sur 37</b><span>décès par requin en Australie de 2010 à 2025 ont eu lieu en Australie-Occidentale, où vivent environ 11 % des Australiens</span></div>
+        <div class="stat"><b>50 pour 1</b><span>noyades sur la côte de Sydney pour un mort par requin, de 2015 à 2025 (101 contre 2)</span></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Morsures de requin non provoquées, par an</p>
+            <p class="fig-sub" id="bite-sub">Australie : environ 18 morsures et 2,3 décès par an (2010-2025), sur quelque 630 millions de visites à la côte.</p>
+          </div>
+          <div class="fig-tools">
+            <div class="seg-ctl" role="group" aria-label="Zone">
+              <button type="button" id="bite-au" aria-pressed="true">Australie</button>
+              <button type="button" id="bite-nsw" aria-pressed="false">Nouvelle-Galles du Sud</button>
+            </div>
+            <div class="legend">
+              <span class="key"><i class="sq" style="--c:var(--fear)"></i>Mortelles</span>
+              <span class="key"><i class="sq" style="--c:var(--fear-soft)"></i>Non mortelles</span>
+            </div>
+          </div>
+        </div>
+        <div class="cols" id="bite-cols" style="--h:190px"></div>
+        <p class="fig-note">Source : ASID v10, morsures non provoquées, 2010-2025. Australie : 284 morsures, 37 décès. Nouvelle-Galles du Sud : 125 morsures, 11 décès.</p>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Morts par requin selon l’État, 2010-2025</p>
+            <p class="fig-sub">Morsures non provoquées. L’Australie-Occidentale compte moins de morsures que la Nouvelle-Galles du Sud, mais plus de décès : 19 % de ses morsures ont été mortelles, contre 9 % en NSW.</p>
+          </div>
+        </div>
+        <div class="bars" id="states"></div>
+        <p class="fig-note">Source : ASID v10. Le Territoire du Nord n’a enregistré aucune morsure non provoquée sur la période. En septembre 2026, un nageur a été tué à Sorrento Beach, à Perth : le cinquième mort par requin en Australie cette année, et le deuxième par attaque non provoquée.</p>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Morts par requin dans l’agglomération de Sydney depuis la pose des filets</p>
+            <p class="fig-sub">Chaque point est un décès, de 1937 à octobre 2026. Survolez un point pour le lieu et l’activité.</p>
+          </div>
+          <div class="legend">
+            <span class="key"><i style="--c:var(--fear)"></i>Attaque non provoquée</span>
+            <span class="key"><i class="ring" style="--c:var(--fear)"></i>Provoquée (pêche sous-marine)</span>
+          </div>
+        </div>
+        <div class="tl-box" id="timeline"></div>
+        <ul class="tl-list">
+          <li><b>1940-1963 : le port et les rivières</b>Les neuf décès de cette période ont lieu dans le port, les baies ou la Georges River, pas sur les plages océaniques.</li>
+          <li><b>1963-2022 : 59 ans sans mort</b>Le dernier décès sur une plage océanique de Sydney avant 2022 remontait à 1936, à South Steyne.</li>
+          <li><b>2022-2026 : trois décès</b>Un nageur à Little Bay (requin blanc, 2022), un surfeur à Long Reef (requin blanc, 2025), un garçon de 12 ans à Nielsen Park, Vaucluse (requin-bouledogue, janvier 2026).</li>
+        </ul>
+        <p class="fig-note">Sources : ASID v10 (Taronga, données jusqu’à juin 2026) et liste des attaques mortelles en Australie. Taronga recense 43 décès à Sydney depuis 1870.</p>
+      </figure>
+
+      <div class="split">
+        <div class="flow">
+          <h3>Le risque par sortie dans l’eau</h3>
+          <p>Pour passer d’un nombre d’attaques à un risque, il faut diviser par l’exposition. Environ 16,6 millions d’Australiens vont à la côte, 3,3 fois par mois en moyenne : quelque 630 millions de visites par an. Environ 1,8 million surfent, 46 sessions par an chacun.</p>
+          <div class="table-wrap"><table class="risk-table">
+            <thead><tr><th>Par sortie</th><th class="n">Morsure, Australie</th><th class="n">Décès, Australie</th><th class="n">Décès, NSW</th></tr></thead>
+            <tbody>
+              <tr><td>Baignade en mer, requin</td><td class="n">1 sur 137 M</td><td class="n">1 sur 840 M</td><td class="n">1 sur 940 M</td></tr>
+              <tr><td>Session de surf, requin</td><td class="n">1 sur 8 M</td><td class="n">1 sur 61 M</td><td class="n">1 sur 73 M</td></tr>
+              <tr><td>Visite à la côte, noyade</td><td class="n">·</td><td class="n">1 sur 4,1 M</td><td class="n">1 sur 4,2 M</td></tr>
+              <tr><td>Session de surf, toutes causes</td><td class="n">·</td><td class="n">1 sur 8,9 M</td><td class="n">·</td></tr>
+            </tbody>
+          </table></div>
+          <p class="fig-note" style="margin-top:0">Le nombre de surfeurs est incertain : l’enquête AusPlay en compte cinq fois moins que Surf Life Saving. Avec elle, le risque par session de surf monterait à environ 1 sur 12 millions. En Californie, Ferretti et ses collègues (2015) estimaient 1 morsure sur 738 millions par baignade et 1 sur 17 millions par jour de surf.</p>
+        </div>
+        <div class="callout">
+          <p class="eyebrow">18 janvier 2026</p>
+          <h3>127 mm de pluie, trois morsures en deux jours</h3>
+          <p>Ce jour-là, Sydney a reçu sa plus forte pluie depuis 1988. Dans les 48 heures, trois morsures de requin-bouledogue ont eu lieu : Nielsen Park (mortelle), Dee Why (une planche mordue, enfant indemne) et North Steyne à Manly (un homme grièvement blessé).</p>
+          <p>Ce n’est pas un hasard. Les requins-bouledogues se rapprochent des plages après plus de 45 mm de pluie, quand l’eau dépasse 20 °C, surtout à quelques centaines de mètres des embouchures (Smoothey et al., 2023). Le risque n’est pas uniforme : il se concentre sur des jours et des lieux que l’on peut prévoir.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="flow">
+          <h3>Les filets et les drones</h3>
+          <p>Depuis 1937, des filets sont posés de septembre à avril sur 51 plages entre Newcastle et Wollongong. En 2024/25, ils ont capturé 223 animaux, dont 24 requins visés ; 67 % des animaux pris sont morts. Une étude de 2024 (Huveneers et al.) ne trouve pas de différence mesurable de morsures entre plages avec et sans filet depuis les années 2000.</p>
+          <p>Depuis fin septembre 2026, 73 drones surveillent 97 plages, dont les 38 plages océaniques de Sydney, en plus de 305 lignes appâtées « SMART » qui permettent de relâcher les requins au large.</p>
+        </div>
+        <div class="flow">
+          <h3>La noyade, le vrai danger de la plage</h3>
+          <p>Sur la côte de Sydney, 101 personnes se sont noyées en dix ans, pour deux tuées par un requin. Dans toute l’Australie, 313 personnes se sont noyées en 2025/26, dont 151 sur la côte, contre deux ou trois morts par requin une année ordinaire. En 2024/25, aucun des 154 noyés côtiers d’Australie ne se baignait entre les drapeaux rouge et jaune pendant les heures de surveillance.</p>
+          <p>En NSW, 63 % des noyés côtiers étaient à plus d’un kilomètre d’un poste de secours, 40 % ont été pris dans un courant d’arrachement (« rip ») et 88 % étaient des hommes. Les drapeaux ne protègent pas des requins : en juin 2026, une nageuse a été mordue à Coogee, à moins de 30 m du bord et entre les drapeaux. Mais ils protègent très bien de la noyade.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="avion" aria-labelledby="avion-t">
+      <div class="sec-head">
+        <p class="eyebrow">Avion · Monde et Australie</p>
+        <h2 id="avion-t">L’avion, le plus sûr des transports</h2>
+        <p class="lede">Un vol commercial est l’une des activités les plus sûres de cette page. Le risque est divisé par deux environ tous les dix ans, et le choix de la compagnie compte bien plus que la peur ressentie à bord.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>1 sur 80 millions</b><span>risque de mourir par embarquement sur une compagnie d’Australie, d’Europe, d’Amérique du Nord ou d’Asie développée (2018-2022)</span></div>
+        <div class="stat"><b>0</b><span>accident mortel de jet chez Qantas, depuis toujours. Aucun passager tué sur une ligne régulière australienne depuis 2005</span></div>
+        <div class="stat"><b>8 sur 38,7 M</b><span>accidents mortels sur 38,7 millions de vols dans le monde en 2025 (IATA)</span></div>
+        <div class="stat"><b>÷ 2 par décennie</b><span>le risque de mourir par vol baisse d’environ 7 % par an depuis 1968</span></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Risque de mourir par embarquement, monde entier</p>
+            <p class="fig-sub">Décès pour 10 millions de passagers embarqués, par décennie. Le risque a été divisé par près de 40 en cinquante ans.</p>
+          </div>
+        </div>
+        <div class="cols" id="barnett-cols" style="--h:210px"></div>
+        <p class="fig-note">Source : Barnett et Reig Torra, <i>Journal of Air Transport Management</i>, 2024 (MIT). Attentats inclus. Pour 2018-2022, les compagnies des pays des groupes 1 et 2 (Australie, Union européenne, États-Unis, Japon, mais aussi Brésil, Inde, Singapour…) sont à 1 sur 80 millions ; celles du groupe 3, à 1 sur 2,2 millions.</p>
+      </figure>
+
+      <div class="split">
+        <div class="callout taxi" id="taxi">
+          <p class="eyebrow">Le calcul du taxi</p>
+          <h3>Au-delà de 5 km, la route pour l’aéroport est plus risquée que le vol</h3>
+          <ol class="steps">
+            <li>Un vol sur une compagnie du groupe 1 : 1 chance sur 80 millions, soit 0,0125 micromort.</li>
+            <li>En voiture en Australie : environ 2,5 morts par milliard de kilomètres, soit 0,0025 micromort par kilomètre.</li>
+            <li>Point d’équilibre : 0,0125 ÷ 0,0025 = 5 km.</li>
+            <li>Centre de Sydney → aéroport : environ 8 km, soit 1,6 fois le risque du vol. Depuis Manly ou Parramatta, environ 25 km, soit 5 fois.</li>
+          </ol>
+          <div class="field">
+            <label for="taxi-km">Votre trajet jusqu’à l’aéroport <output id="taxi-km-out" for="taxi-km">8 km</output></label>
+            <input type="range" id="taxi-km" min="1" max="60" step="1" value="8">
+          </div>
+          <div class="field">
+            <label for="taxi-air">Compagnie</label>
+            <select id="taxi-air">
+              <option value="t1">Groupes 1 et 2 (Qantas, Virgin Australia, Europe…)</option>
+              <option value="world">Moyenne mondiale</option>
+              <option value="t3">Groupe 3 (reste du monde)</option>
+            </select>
+          </div>
+          <div class="bars" id="taxi-bars"></div>
+          <p class="taxi-res" id="taxi-res"></p>
+        </div>
+        <div class="flow">
+          <h3>Ce que le calcul suppose</h3>
+          <p>Le taux de 2,5 morts par milliard de kilomètres est une moyenne nationale, proche du chiffre européen (2,52). Les routes urbaines de Sydney sont plus sûres que les routes de campagne : on y meurt quatre fois moins par habitant. Même si le trajet en ville était deux fois moins risqué, le point d’équilibre resterait autour de 10 km.</p>
+          <p>Le chiffre du vol est une moyenne de 2018 à 2022 pour les compagnies des pays les plus sûrs. Les compagnies australiennes font mieux encore : aucun mort en ligne régulière depuis l’accident d’un turbopropulseur à Lockhart River, en 2005. Pour un vol à la moyenne mondiale, il faut environ 30 km de voiture pour atteindre le même risque.</p>
+          <p>Le calcul ne compte qu’un trajet. Avec le taxi à l’arrivée, la part de la route double.</p>
+          <p>Une étude plus ancienne de l’université du Michigan (Sivak et Flannagan) arrivait à la même conclusion avec des données des années 1990 : 18 km d’autoroute rurale, la route la plus sûre, valaient un vol direct sur une grande compagnie américaine.</p>
+        </div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Du centre-ville à l’aéroport, dans cinq capitales</p>
+            <p class="fig-sub">Risque du trajet en voiture entre le centre et l’aéroport principal, comparé à un vol sur une compagnie australienne. Dans toutes les villes du graphique, la route est plus risquée que l’avion.</p>
+          </div>
+          <div class="legend">
+            <span class="key"><i class="sq" style="--c:var(--fear)"></i>Le vol</span>
+            <span class="key"><i class="sq" style="--c:var(--real)"></i>La route</span>
+          </div>
+        </div>
+        <div class="bars" id="cities"></div>
+        <p class="fig-note">Distances routières approximatives depuis le centre : Adélaïde 7 km, Sydney 8 km, Brisbane 12 km, Perth 12 à 17 km selon le terminal (14 km retenus), Melbourne environ 23 km. Vol : 1 sur 80 millions par embarquement (Barnett 2024). Voiture : 2,5 morts par milliard de kilomètres-passager.</p>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Morts par milliard de kilomètres-passager, selon le mode de transport</p>
+            <p class="fig-sub">États-Unis, 2000-2009. Échelle logarithmique : la moto est 3 000 fois plus meurtrière que l’avion de ligne par kilomètre.</p>
+          </div>
+          <div class="legend">
+            <span class="key"><i style="--c:var(--fear)"></i>Ce qui fait peur</span>
+            <span class="key"><i style="--c:var(--real)"></i>Ce qui tue vraiment</span>
+          </div>
+        </div>
+        <div class="lp" id="modes"></div>
+        <p class="fig-note">Source : Ian Savage, « Comparing the fatality risks in United States transportation across modes and over time », 2013, converti en kilomètres. En Europe en 2019, la voiture était à 2,52 et l’avion à 0,08 décès par milliard de kilomètres-passager (Commission européenne, citée par l’IRSC).</p>
+      </figure>
+
+      <div class="split">
+        <div class="flow">
+          <h3>Le 11 septembre et la route</h3>
+          <p>Dans les douze mois qui ont suivi les attentats de 2001, de nombreux Américains ont préféré la voiture à l’avion. Le psychologue Gerd Gigerenzer estime qu’environ 1 500 personnes de plus sont mortes sur les routes américaines pendant cette période. L’ampleur exacte du report est discutée, mais le mécanisme est clair : fuir un risque spectaculaire peut conduire vers un risque plus grand.</p>
+        </div>
+        <div class="flow">
+          <h3>Une année noire reste rare</h3>
+          <p>2025 a été une mauvaise année : 394 morts selon l’IATA, dont plus des trois quarts dans deux accidents, celui d’Air India 171 à Ahmedabad (260 morts) et la collision de Washington (67 morts). Rapporté à environ 5 milliards de passagers, cela fait encore 1 décès pour près de 13 millions d’embarquements. En 2023, l’IATA calculait qu’il faudrait prendre l’avion chaque jour pendant 103 239 ans pour vivre un accident où tout le monde meurt.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotidien" aria-labelledby="quotidien-t">
+      <div class="sec-head">
+        <p class="eyebrow">Le quotidien · Australie</p>
+        <h2 id="quotidien-t">Ce qui tue vraiment en Australie</h2>
+        <p class="lede">Le cancer de la peau tue environ six Australiens par jour, la route trois à quatre. Les requins, deux à trois par an. À l’échelle du graphique ci-dessous, leur barre fait moins d’un pixel.</p>
+      </div>
+      <figure class="fig" style="margin-top:1rem">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Décès par an en Australie, selon la cause</p>
+            <p class="fig-sub">Échelle linéaire. Dernière année ou moyenne disponible.</p>
+          </div>
+          <div class="legend">
+            <span class="key"><i class="sq" style="--c:var(--fear)"></i>Ce qui fait peur</span>
+            <span class="key"><i class="sq" style="--c:var(--real)"></i>Ce qui tue vraiment</span>
+          </div>
+        </div>
+        <div class="bars" id="deaths"></div>
+        <p class="fig-note">Sources : ABS, causes de décès 2024 (cardiopathies, chutes, suicide) ; AIHW, estimation 2025 (cancer de la peau : mélanome et autres cancers cutanés) ; BITRE 2025 (route) ; Royal Life Saving 2025/26 (noyade) ; ASID 2016-2025 (requins) ; dossiers des coroners 2001-2021 via ScienceAlert (chevaux, abeilles) ; Welton et al. 2017 (serpents, 2000-2016) ; ATSB (avions de ligne). Le chiffre des araignées (aucun décès confirmé depuis 1979) vient de sources secondaires.</p>
+      </figure>
+
+      <div class="split">
+        <div class="flow">
+          <h3>Le soleil de Sydney</h3>
+          <p>L’Australie a le taux de mélanome le plus élevé du monde : 37 nouveaux cas pour 100 000 habitants en 2022, devant le Danemark et la Nouvelle-Zélande. Au moins deux Australiens sur trois auront un cancer de la peau au cours de leur vie. Environ 1 500 personnes meurent chaque année d’un mélanome, et environ 800 d’un autre cancer de la peau.</p>
+          <p>En été, l’indice UV de Sydney monte entre 10 et 14 ; il est jugé « extrême » à partir de 11, et la protection est conseillée dès 3. Une semaine d’été 2023-2024, 15 % des 15-24 ans déclaraient un coup de soleil.</p>
+        </div>
+        <div class="flow">
+          <h3>La route, une hécatombe silencieuse</h3>
+          <p>1 314 morts sur les routes australiennes en 2025, dont 355 en Nouvelle-Galles du Sud. Personne ne les compte comme une catastrophe, parce qu’ils arrivent un par un, chaque jour, partout.</p>
+          <p>En NSW, 68 % des morts ont lieu sur les routes de campagne, où vit un tiers de la population. La vitesse est en cause dans 38 % des décès.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faits" aria-labelledby="faits-t">
+      <div class="sec-head">
+        <p class="eyebrow">Faits marquants</p>
+        <h2 id="faits-t">Neuf chiffres à retenir</h2>
+      </div>
+      <div class="facts">
+        <article class="fact"><b>5 km</b><p>C’est la distance en voiture qui équivaut au risque d’un vol sur une compagnie australienne ou européenne. Le trajet jusqu’à l’aéroport est souvent plus long.</p><small>Calcul : Barnett 2024, BITRE</small></article>
+        <article class="fact"><b>59 ans</b><p>Entre 1963 et 2022, aucun mort par requin à Sydney, alors que des millions de personnes se baignaient chaque été.</p><small>ASID v10</small></article>
+        <article class="fact"><b>×6</b><p>Les chevaux ont tué près de six fois plus d’Australiens que les requins entre 2001 et 2021 : 222 contre 39.</p><small>Dossiers des coroners, via ScienceAlert</small></article>
+        <article class="fact"><b>103 239 ans</b><p>En 2023, il aurait fallu prendre l’avion chaque jour pendant 103 239 ans pour vivre un accident où tout le monde meurt.</p><small>IATA, rapport 2023</small></article>
+        <article class="fact"><b>35 %</b><p>des accidents mortels de jet ont lieu à l’atterrissage, une phase qui dure environ 1 % du vol. La croisière, 57 % du temps, n’en compte que 10 %.</p><small>Boeing, 2016-2025</small></article>
+        <article class="fact"><b>1 500</b><p>morts de plus sur les routes américaines dans l’année qui a suivi le 11 septembre 2001, quand beaucoup ont évité l’avion.</p><small>Gigerenzer 2006</small></article>
+        <article class="fact"><b>1 sur 123</b><p>Sur 123 blessés graves par turbulences aux États-Unis (2009-2018), un seul était attaché de façon documentée. 97 étaient des membres d’équipage.</p><small>NTSB, 2021</small></article>
+        <article class="fact"><b>0 entre les drapeaux</b><p>Aucun des 154 noyés sur la côte australienne en 2024/25 ne se baignait entre les drapeaux pendant la surveillance.</p><small>Surf Life Saving Australia, 2025</small></article>
+        <article class="fact"><b>550 pour 1</b><p>Le mélanome tue environ 550 fois plus d’Australiens par an que les requins. En comptant tous les cancers de la peau, près de 900 fois plus.</p><small>Cancer Australia 2023, AIHW 2025, ASID</small></article>
+      </div>
+    </section>
+
+    <section id="facteurs" aria-labelledby="facteurs-t">
+      <div class="sec-head">
+        <p class="eyebrow">Facteurs de risque</p>
+        <h2 id="facteurs-t">Ce qui multiplie ou divise le risque</h2>
+        <p class="lede">Un risque moyen cache des écarts énormes. Choisir sa compagnie, sa plage ou son heure de surf change plus le risque que la plupart des peurs. Chaque point indique un multiplicateur : à droite de ×1, le risque augmente ; à gauche, il diminue.</p>
+      </div>
+      <div class="legend">
+        <span class="key"><i style="--c:var(--real)"></i>Augmente le risque</span>
+        <span class="key"><i style="--c:var(--safe)"></i>Réduit le risque</span>
+        <span class="key"><i style="--c:var(--ref)"></i>Sans effet mesurable</span>
+        <span class="key"><span class="chip solide">solide</span> étude solide</span>
+        <span class="key"><span class="chip">indicatif</span> estimation ou petit échantillon</span>
+        <span class="key"><span class="chip faible">faible</span> sans dénominateur</span>
+      </div>
+      <div class="factors" id="factors"></div>
+    </section>
+
+    <section id="methode" aria-labelledby="methode-t">
+      <div class="sec-head">
+        <p class="eyebrow">Méthode et limites</p>
+        <h2 id="methode-t">Comment les chiffres sont calculés</h2>
+      </div>
+      <ul class="method">
+        <li><b>Requins, baignade.</b> 9 nageurs tués en Australie de 2010 à 2025 (0,56 par an), divisés par environ 470 millions de visites de baigneurs par an : quelque 630 millions de visites à la côte (Surf Life Saving Australia, 2025), dont 75 % de baigneurs comme dans l’enquête de NSW. Si les baigneurs n’entrent dans l’eau qu’une visite sur deux, le risque double. La NSW seule donne un chiffre proche (3 décès, 177 millions de baignades par an).</li>
+        <li><b>Requins, surf.</b> 21 pratiquants de planche tués en Australie de 2010 à 2025, divisés par 80 millions de sessions par an (1,76 million de surfeurs, 45,7 sessions par an d’après Lawes et al. 2023). Avec les effectifs d’AusPlay, le risque serait environ cinq fois plus élevé.</li>
+        <li><b>Surf, toutes causes.</b> 0,06 décès par million d’heures de surf (Lawes et al. 2023, Australie), multiplié par 1,88 heure par session.</li>
+        <li><b>Noyade.</b> Environ 152 noyades côtières par an en Australie (2023 à 2026), divisées par 630 millions de visites ; la NSW donne le même taux (56 par an pour 238 millions de visites). Les visites surveillées (51 %) ne comptent presque aucun décès : le risque hors surveillance est donc environ deux fois la moyenne.</li>
+        <li><b>Voiture.</b> 0,50 mort pour 100 millions de kilomètres-véhicule (BITRE), 1,57 occupant par voiture, environ deux tiers des morts parmi les occupants : environ 2,5 morts par milliard de kilomètres-passager, proche du chiffre européen.</li>
+        <li><b>Avion.</b> Décès par embarquement de Barnett et Reig Torra (2024) pour 2018-2022 : 1 sur 80 millions (groupes 1 et 2), 1 sur 13,7 millions (monde), 1 sur 2,2 millions (groupe 3).</li>
+        <li><b>Repères quotidiens.</b> Décès annuels divisés par 27,9 millions d’habitants (ABS, mars 2026) puis par 365. Ce sont des moyennes tous âges : le risque toutes causes d’un trentenaire est bien plus faible que 18 micromorts par jour.</li>
+        <li><b>Limites.</b> Ce sont des moyennes de population, pas des risques personnels. Les rapports de cotes (odds ratios) sont lus comme des risques relatifs, ce qui est raisonnable pour des événements rares. Les parts de morsures par heure ne tiennent pas compte du nombre de personnes dans l’eau. Certains chiffres viennent de sources secondaires, signalées ci-dessous. Données à jour en octobre 2026.</li>
+      </ul>
+    </section>
+
+    <section id="sources" aria-labelledby="sources-t">
+      <div class="sec-head">
+        <p class="eyebrow">Sources</p>
+        <h2 id="sources-t">D’où viennent les chiffres</h2>
+      </div>
+      <div class="sources">
+        <div>
+          <h3>Requins et plages</h3>
+          <ul>
+            <li><a href="https://zenodo.org/records/22262542">Australian Shark-Incident Database v10</a>, Taronga, 2026</li>
+            <li><a href="https://www.taronga.org.au/siteassets/wildlife--conservation/tisl/shark-incident-database/asid-2025-summary-1.pdf">Bilan ASID 2025</a>, Taronga</li>
+            <li><a href="https://www.surflifesaving.com.au/wp-content/uploads/sites/2/2023/11/New-South-Wales-Coastal-Safety-Report-2023.pdf">NSW Coastal Safety Report 2023</a>, Surf Life Saving NSW</li>
+            <li><a href="https://lsv.com.au/media-centre/campaigns/stop-look-stay-alive">Life Saving Victoria</a>, 630 millions de visites à la côte (source secondaire)</li>
+            <li><a href="https://www.cbsnews.com/news/shark-attack-swimmer-killed-australia-horrified-beachgoers/">CBS News, septembre 2026</a>, Sorrento Beach</li>
+            <li><a href="https://doi.org/10.1371/journal.pone.0285928">Lawes et al. 2023</a>, PLoS ONE (surf)</li>
+            <li><a href="https://www.ausport.gov.au/clearinghouse/research/archive/surfing">AusPlay, surf</a>, Australian Sports Commission</li>
+            <li><a href="https://doi.org/10.1890/150109">Ferretti et al. 2015</a>, Californie</li>
+            <li><a href="https://doi.org/10.3390/biology12091189">Smoothey et al. 2023</a>, requins-bouledogues en NSW</li>
+            <li><a href="https://doi.org/10.1016/j.marpolbul.2023.115855">Huveneers et al. 2024</a>, filets</li>
+            <li><a href="https://doi.org/10.1038/s41598-022-16950-5">Tucker et al. 2022</a>, survie</li>
+            <li><a href="https://doi.org/10.1098/rsos.201197">Bradshaw et al. 2021</a>, répulsifs électriques</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/21212930/">Hart et al. 2011</a>, vision des requins</li>
+            <li><a href="https://edition.cnn.com/2026/01/20/australia/australia-shark-attacks-sydney-intl-hnk">CNN, janvier 2026</a>, morsures après la pluie</li>
+            <li><a href="https://www.nsw.gov.au/ministerial-releases/increased-bull-shark-activity-expected-around-beaches-and-waterways-following-heavy-rainfall">Gouvernement de NSW, mars 2026</a>, programme requins</li>
+            <li><a href="https://www.sharksmart.nsw.gov.au/__data/assets/pdf_file/0003/1634394/Shark-Meshing-Program-2024-25-Annual-Performance-Report.pdf">Programme des filets, bilan 2024/25</a>, SharkSmart NSW</li>
+            <li><a href="https://dronexl.co/2026/09/03/nsw-shark-drones-750-sightings-nets/">DroneXL, septembre 2026</a>, drones (source secondaire)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Avion</h3>
+          <ul>
+            <li><a href="https://news.mit.edu/2024/study-flying-keeps-getting-safer-0807">Barnett et Reig Torra 2024</a>, MIT</li>
+            <li><a href="https://www.iata.org/en/pressroom/2026-releases/2026-03-09-01/">IATA, bilan de sécurité 2025</a></li>
+            <li><a href="https://www.iata.org/en/pressroom/2024-releases/2024-02-28-01/">IATA, bilan de sécurité 2023</a></li>
+            <li><a href="https://www.boeing.com/content/dam/boeing/v2/safety/statsum.pdf">Boeing Statistical Summary 1959-2025</a></li>
+            <li><a href="https://accidentstats.airbus.com/wp-content/uploads/2026/02/20251092_A-Statistical-analysis-of-commercial-aviation-accidents-2026.pdf">Airbus, analyse statistique 1958-2025</a></li>
+            <li><a href="https://flightsafety.org/wp-content/uploads/2026/02/2025-Safety-Report-FINAL.pdf">Flight Safety Foundation, rapport 2025</a></li>
+            <li><a href="https://www.atsb.gov.au/node/2340">ATSB, statistiques 2010-2019</a></li>
+            <li><a href="https://faculty.wcas.northwestern.edu/ipsavage/436-appendix.pdf">Savage 2013</a>, risques par mode</li>
+            <li><a href="https://ntsb.gov/safety/safety-studies/Documents/SS2101.pdf">NTSB 2021</a>, turbulences</li>
+            <li><a href="https://ideas.repec.org/a/wly/riskan/v26y2006i2p347-351.html">Gigerenzer 2006</a>, après le 11 septembre</li>
+            <li><a href="https://avweb.com/aviation-news/accidents-edge-up-in-2019-ntsb/">NTSB 2019 via AVweb</a>, aviation générale</li>
+            <li><a href="https://time.com/3934663/safest-seat-airplane/">TIME 2015</a>, places à bord</li>
+            <li><a href="https://www.sydneyairport.com.au/info-sheet/transport-options">Sydney Airport</a>, accès</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Route, soleil, noyade</h3>
+          <ul>
+            <li><a href="https://datahub.roadsafety.gov.au/sites/default/files/documents/Road_deaths_Australia_Monthly_Bulletin_Dec2025.pdf">BITRE, bulletin de décembre 2025</a></li>
+            <li><a href="https://www.bitre.gov.au/sites/default/files/documents/international_comparisions_2023.pdf">BITRE, comparaisons internationales</a></li>
+            <li><a href="https://www.nsw.gov.au/ministerial-releases/minns-government-calls-on-drivers-to-slow-down-355-lives-lost-on-nsw-roads-2025">Gouvernement de NSW, bilan routier 2025</a></li>
+            <li><a href="https://www.audit.nsw.gov.au/our-work/reports/regional-road-safety">Audit Office of NSW 2023</a>, routes régionales</li>
+            <li><a href="https://www.nsw.gov.au/media-releases/seatbelt-cameras-reveal-alarming-rate-of-offences">Gouvernement de NSW</a>, ceinture</li>
+            <li><a href="https://www.nrspp.org.au/resources/motorcycle-safety/">NRSPP</a>, moto et nuit</li>
+            <li><a href="https://www.aihw.gov.au/reports/cancer/targeted-skin-cancer-screening/contents/about">AIHW</a>, cancers de la peau</li>
+            <li><a href="https://canceraustralia.gov.au/cancer-types/melanoma/statistics">Cancer Australia</a>, mélanome</li>
+            <li><a href="https://www.wcrf.org/preventing-cancer/cancer-statistics/skin-cancer-statistics">WCRF</a>, classement mondial</li>
+            <li><a href="https://research.manchester.ac.uk/en/publications/reduced-melanoma-after-regular-sunscreen-use-randomized-trial-fol/">Green et al. 2011</a>, essai de Nambour</li>
+            <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2873840/">Dennis et al. 2008</a>, coups de soleil</li>
+            <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3404185">Boniol et al. 2012</a>, solarium</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/16125929/">Gandini et al. 2005</a>, phénotype</li>
+            <li><a href="https://www.ausleisure.com.au/news/2026-national-drowning-report-shows-encouraging-12-fall-in-lives-lost">Royal Life Saving 2026</a>, noyades</li>
+            <li><a href="https://www.surflifesaving.com.au/news/majority-of-drownings-occurring-in-remote-locations-report/">Surf Life Saving Australia 2025</a>, noyades côtières</li>
+            <li><a href="https://www.pittwateronlinenews.com/SLSA-releases-National-Coastal-Safety-Report-2025.php">National Coastal Safety Report 2025</a>, résumé</li>
+            <li><a href="https://www.surflifesaving.com.au/wp-content/uploads/sites/2/2020/05/Surf-Life-Saving-Australia-Rock-Fishing-Coastal-Safety-Brief-2020.pdf">SLSA 2020</a>, pêche sur les rochers</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Repères et biais</h3>
+          <ul>
+            <li><a href="https://www.abs.gov.au/statistics/health/causes-death/causes-death-australia/latest-release">ABS, causes de décès 2024</a></li>
+            <li><a href="https://www.abs.gov.au/media-centre/media-releases/australias-population-grows-14-march-2026">ABS, population mars 2026</a></li>
+            <li><a href="https://www.sciencealert.com/deadliest-animal-in-australia-revealed-and-its-a-big-surprise">ScienceAlert</a>, décès liés aux animaux (source secondaire)</li>
+            <li><a href="https://research.monash.edu/en/publications/incidence-of-fatal-snake-bite-in-australia-a-coronial-based-retro/">Welton et al. 2017</a>, serpents</li>
+            <li><a href="https://scholarsbank.uoregon.edu/xmlui/handle/1794/22549">Lichtenstein et al. 1978</a>, fréquence perçue des causes de décès</li>
+            <li><a href="https://en.wikipedia.org/wiki/Micromort">Micromort</a>, définition</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Peur bleue · données rassemblées en octobre 2026</span>
+    <span>Moyennes de population, à vérifier avant toute citation.</span>
+  </div>
+</footer>
+
+<div id="tip" hidden></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Formats ---------- */
+  var nf = {};
+  function NF(d) { return nf[d] || (nf[d] = new Intl.NumberFormat("fr-FR", { maximumSignificantDigits: d })); }
+  function fmtUm(v) {
+    if (v === 0) return "0";
+    if (v >= 100) return NF(3).format(Math.round(v));
+    return NF(2).format(v);
+  }
+  function oneIn(v) {
+    if (!v) return "aucun décès";
+    var n = 1e6 / v;
+    if (n >= 1e9) { var b = n / 1e9; return "1 sur " + NF(2).format(b) + (b >= 2 ? " milliards" : " milliard"); }
+    if (n >= 1e6) { var m = n / 1e6; return "1 sur " + NF(2).format(m) + (m >= 2 ? " millions" : " million"); }
+    return "1 sur " + NF(2).format(n);
+  }
+  function mult(v) { return "×" + NF(2).format(v); }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  /* ---------- Risques de base, en micromorts ---------- */
+  var R = {
+    swim: 0.00119, swimHi: 0.00238,        // requin, par baignade, Australie 2010-2025
+    surf: 0.0163, surfHi: 0.086,           // requin, par session de surf, Australie
+    surfAll: 0.113,                        // surf, toutes causes (Lawes 2023)
+    drownOut: 0.48,                        // noyade, visite hors surveillance
+    carKm: 0.0025,                         // voiture, par km-passager
+    fly: { t1: 0.0125, world: 0.073, t3: 0.4545 },
+    skinDay: 0.226, roadDay: 0.129, allDay: 18.4,
+    skinYear: 82, roadYear: 47
+  };
+  var FLY_LABEL = { t1: "groupes 1 et 2", world: "moyenne mondiale", t3: "groupe 3" };
+
+  /* ---------- Infobulle ---------- */
+  var tip = document.getElementById("tip");
+  function showTip(target, x, y) {
+    var t = target.getAttribute("data-tip");
+    if (!t) return;
+    tip.textContent = t;
+    tip.hidden = false;
+    var r = tip.getBoundingClientRect();
+    var px = x + 14, py = y + 14;
+    if (px + r.width > window.innerWidth - 8) px = Math.max(8, x - r.width - 14);
+    if (py + r.height > window.innerHeight - 8) py = Math.max(8, y - r.height - 14);
+    tip.style.left = px + "px";
+    tip.style.top = py + "px";
+  }
+  document.addEventListener("pointermove", function (e) {
+    var t = e.target.closest && e.target.closest("[data-tip]");
+    if (t) showTip(t, e.clientX, e.clientY); else tip.hidden = true;
+  });
+  document.addEventListener("focusin", function (e) {
+    var t = e.target.closest && e.target.closest("[data-tip]");
+    if (!t) { tip.hidden = true; return; }
+    var b = t.getBoundingClientRect();
+    showTip(t, b.left + Math.min(b.width, 240) * 0.5, b.bottom - 6);
+  });
+  document.addEventListener("focusout", function () { tip.hidden = true; });
+  window.addEventListener("scroll", function () { tip.hidden = true; }, { passive: true });
+
+  /* ---------- Graphique à points, échelle logarithmique ---------- */
+  function logPlot(root, rows, o) {
+    var lmin = Math.log10(o.min), lspan = Math.log10(o.max) - lmin;
+    function pos(v) { return Math.max(0, Math.min(100, (Math.log10(v) - lmin) / lspan * 100)); }
+    root.textContent = "";
+    var axis = el("div", "lp-axis");
+    axis.setAttribute("aria-hidden", "true");
+    axis.appendChild(el("div", "lp-label cap", o.axisLabel || ""));
+    var at = el("div", "lp-track");
+    o.ticks.forEach(function (t) {
+      var p = pos(t), s = el("span", (p < 6 ? "l" : p > 94 ? "r" : "") + (o.minor && o.minor.indexOf(t) >= 0 ? " minor" : ""), o.tickFmt(t));
+      s.style.left = p + "%";
+      at.appendChild(s);
+    });
+    axis.appendChild(at);
+    axis.appendChild(el("div", "lp-val cap", o.valHead || ""));
+    root.appendChild(axis);
+
+    rows.forEach(function (r) {
+      var row = el("div", "lp-row");
+      row.tabIndex = 0;
+      row.setAttribute("data-tip", r.tip);
+      row.style.setProperty("--c", "var(--" + r.k + ")");
+      var lab = el("div", "lp-label", r.l);
+      if (r.s) lab.appendChild(el("small", null, r.s));
+      row.appendChild(lab);
+      var tr = el("div", "lp-track");
+      o.ticks.forEach(function (t) {
+        var g = el("i", "lp-tick" + (t === o.strong ? " strong" : ""));
+        g.style.left = pos(t) + "%";
+        tr.appendChild(g);
+      });
+      if (r.hi) {
+        var rg = el("i", "lp-range");
+        rg.style.left = pos(r.v) + "%";
+        rg.style.width = (pos(r.hi) - pos(r.v)) + "%";
+        tr.appendChild(rg);
+      }
+      var d = el("i", "lp-dot" + (r.v === 0 ? " zero" : ""));
+      d.style.left = (r.v === 0 ? 1.5 : pos(r.v)) + "%";
+      tr.appendChild(d);
+      row.appendChild(tr);
+      var val = el("div", "lp-val", r.val);
+      if (r.val2) {
+        var s2 = el("small", r.chip ? "chip " + r.chip : null, r.val2);
+        if (r.chip) { val.appendChild(document.createElement("br")); }
+        val.appendChild(s2);
+      }
+      row.appendChild(val);
+      root.appendChild(row);
+    });
+  }
+  function umTick(t) {
+    return t >= 1 ? NF(2).format(t) : NF(1).format(t);
+  }
+
+  /* ---------- 1. L'échelle des risques ---------- */
+  var ladder = [
+    { l: "Une baignade en mer", s: "requin, Australie", v: R.swim, hi: R.swimHi, k: "fear", src: "ASID v10, SLSA 2025" },
+    { l: "Un vol, groupes 1 et 2", s: "Qantas, Virgin, Europe, Amérique du Nord…", v: R.fly.t1, k: "fear", src: "Barnett 2024, 2018-2022" },
+    { l: "Une session de surf", s: "requin, Australie", v: R.surf, hi: R.surfHi, k: "fear", src: "ASID v10, Lawes 2023, AusPlay" },
+    { l: "8 km de taxi", s: "centre de Sydney → aéroport", v: 8 * R.carKm, k: "real", src: "BITRE, calcul de ce site" },
+    { l: "23 km de taxi", s: "centre de Melbourne → aéroport", v: 23 * R.carKm, k: "real", src: "BITRE, calcul de ce site" },
+    { l: "Un vol, moyenne mondiale", s: "2018-2022", v: R.fly.world, k: "fear", src: "Barnett 2024" },
+    { l: "30 km de voiture", s: "aller-retour jusqu’à la plage", v: 30 * R.carKm, k: "real", src: "BITRE, calcul de ce site" },
+    { l: "Une session de surf", s: "toutes causes", v: R.surfAll, k: "real", src: "Lawes 2023" },
+    { l: "Un jour en Australie", s: "risque routier moyen", v: R.roadDay, k: "real", src: "BITRE 2025, ABS" },
+    { l: "Un jour en Australie", s: "cancer de la peau, moyenne", v: R.skinDay, k: "real", src: "AIHW 2025, ABS" },
+    { l: "Une visite à la plage hors surveillance", s: "noyade, NSW", v: R.drownOut, k: "real", src: "SLSA, SLS NSW, calcul de ce site" },
+    { l: "Un vol, groupe 3", s: "compagnies des pays les moins sûrs", v: R.fly.t3, k: "fear", src: "Barnett 2024" },
+    { l: "Un jour en Australie", s: "toutes causes, tous âges", v: R.allDay, k: "ref", src: "ABS 2024" }
+  ];
+  ladder.sort(function (a, b) { return a.v - b.v; });
+  ladder.forEach(function (r) {
+    r.val = fmtUm(r.v);
+    r.val2 = oneIn(r.v);
+    r.tip = r.l + " (" + r.s + ")\n" + fmtUm(r.v) + " micromort" + (r.v >= 2 ? "s" : "") + ", soit " + oneIn(r.v) +
+      (r.hi ? "\nFourchette haute : " + fmtUm(r.hi) + " (" + oneIn(r.hi) + ")" : "") + "\nSource : " + r.src;
+  });
+  logPlot(document.getElementById("ladder"), ladder, {
+    min: 0.0006, max: 40, ticks: [0.001, 0.01, 0.1, 1, 10], strong: 1,
+    tickFmt: umTick, axisLabel: "", valHead: "micromorts"
+  });
+  var ltb = document.querySelector("#ladder-table tbody");
+  ladder.forEach(function (r) {
+    var tr = document.createElement("tr");
+    [r.l + " (" + r.s + ")", fmtUm(r.v) + (r.hi ? " à " + fmtUm(r.hi) : ""), oneIn(r.v).replace("1 sur ", ""), r.src].forEach(function (c, i) {
+      var td = el("td", i === 1 || i === 2 ? "n" : null, c);
+      tr.appendChild(td);
+    });
+    ltb.appendChild(tr);
+  });
+
+  /* ---------- 2. Chronologie de Sydney ---------- */
+  var deaths = [
+    { y: 1940.05, t: "Janvier 1940 · Brighton-le-Sands, Botany Bay" },
+    { y: 1940.12, t: "Février 1940 · Brighton-le-Sands, Botany Bay" },
+    { y: 1942.05, t: "Janvier 1942 · Bantry Bay, Middle Harbour" },
+    { y: 1942.95, t: "Décembre 1942 · Bantry Bay, Middle Harbour" },
+    { y: 1946.5, t: "1946 · Oatley Bay, Georges River" },
+    { y: 1955.05, t: "Janvier 1955 · Balmoral, pêche sous-marine (provoquée)", p: true },
+    { y: 1955.12, t: "Février 1955 · Sugarloaf Bay, Middle Harbour" },
+    { y: 1960.5, t: "1960 · Roseville Bridge, plongée en apnée" },
+    { y: 1963.05, t: "Janvier 1963 · Middle Harbour, baignade" },
+    { y: 2022.12, t: "Février 2022 · Little Bay, nageur, requin blanc" },
+    { y: 2025.68, t: "Septembre 2025 · Long Reef, surfeur, requin blanc" },
+    { y: 2026.05, t: "Janvier 2026 · Nielsen Park, Vaucluse, garçon de 12 ans, requin-bouledogue" }
+  ];
+  var Y0 = 1934, Y1 = 2028;
+  function ypos(y) { return (y - Y0) / (Y1 - Y0) * 100; }
+  var tl = document.getElementById("timeline");
+  function drawTimeline() {
+    tl.textContent = "";
+    var w = tl.clientWidth || 600;
+    tl.appendChild(el("div", "tl-axis"));
+    for (var y = 1940; y <= 2020; y += 10) {
+      var s = el("span", "tl-year", String(y));
+      s.style.left = ypos(y) + "%";
+      tl.appendChild(s);
+    }
+    var net = el("div", "tl-net");
+    net.style.left = ypos(1937) + "%";
+    net.appendChild(el("span", null, "1937 · premiers filets"));
+    tl.appendChild(net);
+    var gap = el("div", "tl-gap");
+    gap.style.left = ypos(1963.3) + "%";
+    gap.style.width = (ypos(2021.9) - ypos(1963.3)) + "%";
+    gap.appendChild(el("span", null, "59 ans sans décès"));
+    tl.appendChild(gap);
+    var placed = [];
+    deaths.forEach(function (d) {
+      var x = ypos(d.y) / 100 * w, lvl = 0;
+      while (placed.some(function (q) { return q.lvl === lvl && Math.abs(q.x - x) < 15; })) lvl++;
+      placed.push({ x: x, lvl: lvl });
+      var dot = el("span", "tl-dot" + (d.p ? " provoked" : ""));
+      dot.style.left = ypos(d.y) + "%";
+      dot.style.top = (106 - lvl * 16) + "px";
+      dot.tabIndex = 0;
+      dot.setAttribute("role", "img");
+      dot.setAttribute("aria-label", d.t);
+      dot.setAttribute("data-tip", d.t);
+      tl.appendChild(dot);
+    });
+  }
+  drawTimeline();
+  var rT;
+  window.addEventListener("resize", function () { clearTimeout(rT); rT = setTimeout(drawTimeline, 120); });
+
+  /* ---------- 3. Colonnes ---------- */
+  function columns(root, data, o) {
+    root.textContent = "";
+    var yAxis = el("div", "cols-y"), plot = el("div", "cols-plot"), xs = el("div", "cols-x");
+    yAxis.setAttribute("aria-hidden", "true");
+    o.ticks.forEach(function (t) {
+      var p = t / o.max * 100;
+      var s = el("span", null, o.tickFmt ? o.tickFmt(t) : String(t));
+      s.style.bottom = p + "%";
+      yAxis.appendChild(s);
+      if (t > 0) { var g = el("i", "cols-grid"); g.style.bottom = p + "%"; plot.appendChild(g); }
+    });
+    data.forEach(function (d) {
+      var c = el("div", "col");
+      c.tabIndex = 0;
+      c.setAttribute("data-tip", d.tip);
+      d.segs.forEach(function (sg, i) {
+        if (!sg.v) return;
+        var s = el("i", "seg");
+        s.style.height = "calc(" + (sg.v / o.max * 100) + "% - 2px)";
+        s.style.setProperty("--c", "var(--" + sg.k + ")");
+        c.appendChild(s);
+      });
+      var segs = c.querySelectorAll(".seg");
+      if (segs.length) segs[segs.length - 1].classList.add("top");
+      if (d.top) c.appendChild(el("span", "col-top", d.top));
+      plot.appendChild(c);
+      xs.appendChild(el("span", null, d.x));
+    });
+    root.appendChild(yAxis);
+    root.appendChild(plot);
+    root.appendChild(xs);
+  }
+  // [année, morsures non provoquées, décès], ASID v10
+  var BITES = {
+    au: { data: [[2010, 14, 1], [2011, 9, 4], [2012, 18, 2], [2013, 9, 2], [2014, 13, 2], [2015, 22, 1], [2016, 21, 2], [2017, 17, 1],
+      [2018, 21, 1], [2019, 15, 0], [2020, 28, 7], [2021, 20, 4], [2022, 20, 1], [2023, 22, 4], [2024, 13, 0], [2025, 22, 5]],
+      max: 30, ticks: [0, 10, 20, 30], peak: [2020],
+      sub: "Australie : environ 18 morsures et 2,3 décès par an (2010-2025), sur quelque 630 millions de visites à la côte." },
+    nsw: { data: [[2010, 6, 0], [2011, 4, 0], [2012, 7, 0], [2013, 3, 1], [2014, 5, 2], [2015, 14, 1], [2016, 12, 0], [2017, 5, 0],
+      [2018, 9, 0], [2019, 8, 0], [2020, 14, 2], [2021, 8, 2], [2022, 11, 1], [2023, 5, 0], [2024, 4, 0], [2025, 10, 2]],
+      max: 16, ticks: [0, 5, 10, 15], peak: [2015, 2020],
+      sub: "Nouvelle-Galles du Sud : environ 8 morsures par an et moins d’un décès, sur environ 238 millions de visites à la côte." }
+  };
+  var biteArea = "au";
+  var narrow = window.matchMedia("(max-width: 640px)");
+  function drawBites() {
+    var b = BITES[biteArea];
+    document.getElementById("bite-sub").textContent = b.sub;
+    document.getElementById("bite-au").setAttribute("aria-pressed", String(biteArea === "au"));
+    document.getElementById("bite-nsw").setAttribute("aria-pressed", String(biteArea === "nsw"));
+    columns(document.getElementById("bite-cols"), b.data.map(function (r) {
+      return {
+        x: narrow.matches ? "’" + String(r[0]).slice(2) : String(r[0]),
+        segs: [{ v: r[2], k: "fear" }, { v: r[1] - r[2], k: "fear-soft" }],
+        top: b.peak.indexOf(r[0]) >= 0 ? String(r[1]) : "",
+        tip: r[0] + "\n" + r[1] + " morsure" + (r[1] > 1 ? "s" : "") + ", dont " + r[2] + " mortelle" + (r[2] > 1 ? "s" : "")
+      };
+    }), { max: b.max, ticks: b.ticks });
+  }
+  document.getElementById("bite-au").addEventListener("click", function () { biteArea = "au"; drawBites(); });
+  document.getElementById("bite-nsw").addEventListener("click", function () { biteArea = "nsw"; drawBites(); });
+  drawBites();
+  if (narrow.addEventListener) narrow.addEventListener("change", drawBites);
+
+  var barnett = [["1968-1977", 350000], ["1978-1987", 750000], ["1988-1997", 1.3e6], ["1998-2007", 2.7e6], ["2008-2017", 7.9e6], ["2018-2022", 13.7e6]];
+  columns(document.getElementById("barnett-cols"), barnett.map(function (r) {
+    var per10m = 1e7 / r[1];
+    var lbl = r[1] >= 1e6 ? "1 sur " + NF(3).format(r[1] / 1e6) + " M" : "1 sur " + NF(3).format(r[1]);
+    return {
+      x: r[0], segs: [{ v: per10m, k: "fear" }], top: lbl,
+      tip: r[0] + "\n" + NF(2).format(per10m) + " décès pour 10 millions d’embarquements\nsoit " + lbl.replace(" M", " millions")
+    };
+  }), { max: 35, ticks: [0, 10, 20, 30] });
+
+  /* ---------- 4. Modes de transport ---------- */
+  var modes = [
+    { l: "Moto", v: 132.1, k: "real" },
+    { l: "Voiture et utilitaire", v: 4.52, k: "real" },
+    { l: "Ferry", v: 1.97, k: "real" },
+    { l: "Train de banlieue et grandes lignes", v: 0.267, k: "real" },
+    { l: "Métro et tramway", v: 0.149, k: "real" },
+    { l: "Bus", v: 0.068, k: "real" },
+    { l: "Avion de ligne", v: 0.0435, k: "fear" }
+  ];
+  modes.forEach(function (m) {
+    m.val = NF(2).format(m.v);
+    m.tip = m.l + "\n" + NF(2).format(m.v) + " décès par milliard de km-passager\n" +
+      (m.l === "Avion de ligne" ? "Référence" : NF(2).format(m.v / 0.0435) + " fois l’avion de ligne");
+  });
+  logPlot(document.getElementById("modes"), modes, {
+    min: 0.025, max: 250, ticks: [0.1, 1, 10, 100], strong: 1,
+    tickFmt: function (t) { return NF(2).format(t); }, valHead: "par Md de km"
+  });
+
+  /* ---------- 5. Décès par an ---------- */
+  function bars(root, rows, max, o) {
+    root.textContent = "";
+    rows.forEach(function (r) {
+      var row = el("div", "b-row");
+      row.tabIndex = 0;
+      if (r.tip) row.setAttribute("data-tip", r.tip);
+      row.style.setProperty("--c", "var(--" + r.k + ")");
+      var lab = el("div", "b-label", r.l);
+      if (r.s) lab.appendChild(el("small", null, r.s));
+      row.appendChild(lab);
+      var tr = el("div", "b-track");
+      var b = el("i", "b-bar" + (r.v ? "" : " none"));
+      b.style.width = (r.v / max * 100) + "%";
+      tr.appendChild(b);
+      row.appendChild(tr);
+      row.appendChild(el("div", "b-val", r.val));
+      root.appendChild(row);
+    });
+  }
+  var causes = [
+    { l: "Cardiopathies ischémiques", s: "2024", v: 16326, k: "real" },
+    { l: "Chutes accidentelles", s: "2024", v: 5197, k: "real" },
+    { l: "Suicide", s: "2024", v: 3326, k: "real" },
+    { l: "Cancer de la peau", s: "estimation 2025", v: 2300, k: "real", txt: "≈ 2 300" },
+    { l: "Route", s: "2025", v: 1314, k: "real" },
+    { l: "Noyade", s: "2025/26", v: 313, k: "real" },
+    { l: "Chevaux", s: "moyenne 2001-2021", v: 10.6, k: "real" },
+    { l: "Requins", s: "moyenne 2016-2025", v: 2.5, k: "fear" },
+    { l: "Serpents", s: "moyenne 2000-2016", v: 2.2, k: "fear" },
+    { l: "Abeilles et guêpes", s: "moyenne 2001-2021", v: 2.1, k: "real" },
+    { l: "Avions de ligne australiens", s: "depuis 2005", v: 0, k: "fear" },
+    { l: "Araignées", s: "depuis 1979", v: 0, k: "fear" }
+  ];
+  causes.forEach(function (c) {
+    c.val = c.txt || NF(4).format(c.v);
+    c.tip = c.l + " (" + c.s + ")\n" + c.val + " décès par an" + (c.v ? "\nsoit " + NF(2).format(c.v / 365 * 7) + " par semaine" : "");
+  });
+  bars(document.getElementById("deaths"), causes, 16326);
+
+  // [État, décès non provoqués, morsures non provoquées], ASID v10, 2010-2025
+  var states = [["Australie-Occidentale", 16, 85], ["Nouvelle-Galles du Sud", 11, 125], ["Queensland", 5, 38], ["Australie-Méridionale", 5, 21],
+    ["Victoria", 0, 13], ["Tasmanie", 0, 2], ["Territoire du Nord", 0, 0]];
+  bars(document.getElementById("states"), states.map(function (s) {
+    return {
+      l: s[0], s: s[2] + (s[2] > 1 ? " morsures" : " morsure"), v: s[1], k: "fear", val: s[1] + (s[1] > 1 ? " décès" : " décès"),
+      tip: s[0] + ", 2010-2025\n" + s[1] + " décès, " + s[2] + " morsures non provoquées" + (s[2] ? "\n" + NF(2).format(s[1] / s[2] * 100) + " % de morsures mortelles" : "")
+    };
+  }), 16);
+
+  // Centre-ville → aéroport principal, km par la route (approximatif)
+  var cities = [["Adélaïde", 7], ["Sydney", 8], ["Brisbane", 12], ["Perth", 14], ["Melbourne", 23]];
+  var cityRows = [{ l: "Le vol", s: "compagnie australienne", v: R.fly.t1, k: "fear", val: "×1", tip: "Le vol\n" + oneIn(R.fly.t1) + " par embarquement" }];
+  cities.forEach(function (c) {
+    var v = c[1] * R.carKm;
+    cityRows.push({ l: c[0], s: "environ " + c[1] + " km par la route", v: v, k: "real", val: "×" + NF(2).format(v / R.fly.t1),
+      tip: c[0] + ", centre → aéroport, environ " + c[1] + " km\n" + oneIn(v) + "\n" + NF(2).format(v / R.fly.t1) + " fois le risque du vol" });
+  });
+  bars(document.getElementById("cities"), cityRows, 23 * R.carKm);
+
+  /* ---------- 6. Facteurs de risque ---------- */
+  var factorBlocks = [
+    {
+      t: "Requins", sub: "par sortie dans l’eau, Australie", rows: [
+        { l: "Surfer plutôt que se baigner", s: "par sortie, jusqu’à ×70 selon les effectifs retenus", v: 14, q: "indicatif", src: "Calcul de ce site : ASID 2010-2025, SLSA, Lawes 2023" },
+        { l: "Australie-Occidentale, comparée à la moyenne", s: "morts par requin par habitant, 2010-2025", v: 4, q: "faible", src: "43 % des morts par requin en Australie de 2010 à 2025, pour environ 11 % de la population (ASID v10). Sans tenir compte du temps passé dans l’eau." },
+        { l: "À l’aube, de 5 h à 8 h", s: "par heure, comparé à la journée", v: 1.6, q: "faible", src: "25 % des morsures en 3 heures, contre 42 % en 8 heures de journée (ASID, NSW 2000-2025). Sans le nombre de personnes dans l’eau." },
+        { l: "En fin d’après-midi, de 16 h à 20 h", s: "par heure, comparé à la journée", v: 1.5, q: "faible", src: "32 % des morsures en 4 heures (ASID, NSW 2000-2025). Moins de monde dans l’eau à ces heures : l’effet réel est sans doute plus fort." },
+        { l: "Plage protégée par un filet", s: "depuis les années 2000", v: 1, q: "indicatif", src: "Huveneers et al. 2024 : pas de différence détectable entre plages avec et sans filet." },
+        { l: "Répulsif électrique sur la planche", s: "morsures évitées, estimation", v: 0.4, q: "indicatif", src: "Essais sur appâts : 96 % puis 40 % d’appâts pris (Huveneers 2018) ; environ 60 % de morsures évitées (Bradshaw 2021)." },
+        { l: "Avoir une planche, si un requin blanc mord", s: "risque d’en mourir", v: 0.22, q: "indicatif", src: "Tucker et al. 2022 : survie de 45 % sans planche, 88 % avec." }
+      ],
+      notes: [
+        "<b>Après une forte pluie</b> (plus de 45 mm), dans une eau à plus de 20 °C, les requins-bouledogues se rapprochent des plages, surtout à 500-800 m des embouchures (Smoothey 2023). Le conseil officiel : éviter de se baigner à moins d’un kilomètre d’une rivière ou d’un port après la pluie.",
+        "<b>L’aube et le crépuscule</b> ne racontent pas tout : les grands requins-bouledogues fréquentent les plages de NSW de midi à 4 h du matin, surtout entre 18 h et 1 h. Les chercheurs proposent « après-midi et faible lumière ».",
+        "<b>La saison</b> : de décembre à mars, 47 % des morsures en NSW, mais aussi beaucoup plus de baigneurs. Les requins blancs mordent toute l’année, avec un pic en février.",
+        "<b>La distance au bord</b> protège peu : la moitié des morsures en NSW ont lieu à moins de 75 m du rivage, 44 % à moins de 50 m, dans 3 m d’eau en médiane.",
+        "<b>La couleur de la combinaison</b> ne compte probablement pas : les requins semblent ne pas distinguer les couleurs (Hart 2011). Aucune donnée sérieuse sur les bijoux.",
+        "<b>Les drones et lignes SMART</b> : aucune morsure pendant leur déploiement en NSW (Huveneers 2024), sur un échantillon encore court."
+      ]
+    },
+    {
+      t: "Noyade", sub: "côte australienne", rows: [
+        { l: "Être un homme", s: "comparé à une femme", v: 6.8, q: "solide", src: "National Coastal Safety Report 2025 : 87 % des noyés côtiers sont des hommes." },
+        { l: "Un jour férié", s: "comparé à un jour ordinaire", v: 3.3, q: "solide", src: "National Coastal Safety Report 2025." },
+        { l: "Entre les drapeaux, pendant la surveillance", s: "aucun noyé côtier en 2024/25", v: 0, q: "solide", src: "National Coastal Safety Report 2025 : aucun des 154 noyés côtiers ne se baignait entre les drapeaux pendant la surveillance." }
+      ],
+      notes: [
+        "<b>Les courants d’arrachement</b> sont en cause dans 40 % des noyades côtières de NSW (2024/25), et tuent bien plus que les requins : 21 morts par an en Australie de 2004 à 2011, contre environ 1 pour les requins sur la même période.",
+        "<b>La pêche sur les rochers</b> tue environ 8 personnes par an en NSW ; 95 % sont des hommes, et 4 % seulement portaient un gilet. Randwick et les Northern Beaches sont les secteurs les plus touchés.",
+        "<b>L’alcool</b> est présent dans 21 % des noyades en Australie (2019/20 à 2023/24).",
+        "<b>L’éloignement</b> : 63 % des noyés côtiers de NSW se trouvaient à plus d’un kilomètre d’un poste de secours."
+      ]
+    },
+    {
+      t: "Avion", sub: "par vol ou par heure de vol", rows: [
+        { l: "Petit avion de tourisme", s: "par heure de vol, États-Unis 2019", v: 107, q: "solide", src: "NTSB 2019 : 1,069 accident mortel par 100 000 heures, contre 0,01 pour les compagnies." },
+        { l: "Compagnie d’un pays du groupe 3", s: "comparé aux groupes 1 et 2, 2018-2022", v: 36.5, q: "solide", src: "Barnett et Reig Torra 2024." },
+        { l: "Avion-taxi ou vol charter", s: "par heure de vol, États-Unis 2019", v: 32, q: "solide", src: "NTSB 2019 : 0,319 accident mortel par 100 000 heures." },
+        { l: "Turbopropulseur plutôt que jet", s: "taux d’accident, 2025", v: 4, q: "solide", src: "IATA 2025 : 4,08 accidents par million de vols contre 1,03 pour les jets." },
+        { l: "Jet d’ancienne génération", s: "comparé aux commandes électriques", v: 3.5, q: "solide", src: "Airbus 2026 : 0,14 accident mortel par million de vols contre 0,04, moyenne sur 10 ans." },
+        { l: "Compagnie non certifiée IOSA", s: "taux d’accident, 2025", v: 2.6, q: "solide", src: "IATA 2025 : 2,55 accidents par million de vols contre 0,98 pour les compagnies auditées IOSA." },
+        { l: "Un vol avec escale", s: "comparé à un vol direct", v: 2, q: "indicatif", src: "Le risque se concentre au décollage et à l’atterrissage : deux vols, deux fois le risque." }
+      ],
+      notes: [
+        "<b>Quel avion ?</b> Accidents mortels par million de décollages (Boeing, 1959-2025) : famille A320neo 0,04, A320ceo 0,07, 737 NG 0,08, 777 0,12, 787 et A380 aucun. Les anciens 737-100/200 étaient à 0,87. Les modèles récents avec peu de vols ont des taux instables : le 737 MAX est à 0,27 après deux crashs.",
+        "<b>Les phases critiques</b> : décollage et montée initiale font 22 % des accidents mortels en 2 % du temps de vol ; approche finale et atterrissage, 48 % en 4 % du temps (Boeing 2016-2025). Le risque dépend du nombre de vols, pas de la distance.",
+        "<b>La ceinture</b> : aux États-Unis, les turbulences ont blessé gravement 123 personnes de 2009 à 2018, dont 97 membres d’équipage. Un seul blessé était attaché de façon documentée. Garder la ceinture bouclée en vol supprime presque tout ce risque.",
+        "<b>La place à bord</b> : l’arrière semble un peu plus sûr (69 % de survie contre 49 % à l’avant, Popular Mechanics 2007 ; 32 % de décès contre 38-39 %, TIME 2015), mais sur moins de 20 accidents anciens et sans test statistique. Preuve faible.",
+        "<b>La région</b> : en 2025, l’IATA mesure un risque nul en Europe, en Asie du Nord et au Moyen-Orient, 0,15 en Asie-Pacifique, 0,21 en Amérique du Nord et 2,19 en Afrique (pertes totales par million de vols). La liste noire européenne compte 154 compagnies interdites (juin 2026).",
+        "<b>Les vols touristiques</b> en hélicoptère ou petit avion ont 2,6 fois le taux d’accident des autres vols charter aux États-Unis (2000-2010)."
+      ]
+    },
+    {
+      t: "Route", sub: "Nouvelle-Galles du Sud et Australie", rows: [
+        { l: "Moto plutôt que voiture", s: "par kilomètre", v: 30, q: "indicatif", src: "CARRS-Q, données vers 2010 : environ 30 fois le risque d’un occupant de voiture." },
+        { l: "Vivre en région plutôt qu’à Sydney", s: "décès par habitant, 2017-2021", v: 4.2, q: "solide", src: "Audit Office of NSW 2023 : 8,33 contre 2,00 morts pour 100 000 habitants." },
+        { l: "Sans ceinture", s: "risque de mourir dans un accident", v: 2, q: "solide", src: "Transport for NSW : 149 morts sans ceinture en 5 ans, environ 15 % des occupants tués." },
+        { l: "Conduite de nuit", s: "par kilomètre", v: 1.6, q: "faible", src: "NRSPP : 25 % de la conduite, 40 % des accidents. Source peu détaillée ; d’autres travaux donnent 3 à 4 fois le risque de jour." }
+      ],
+      notes: [
+        "<b>La vitesse</b> est en cause dans 38 % des morts sur les routes de NSW en 2025, la fatigue dans environ 23 % (2024).",
+        "<b>L’alcool</b> est présent dans 12,5 % à 16 % des accidents mortels en NSW ; les drogues dans environ 22 % des décès (2023).",
+        "<b>Les jeunes conducteurs</b> de 17 à 25 ans représentent environ 15 % des titulaires du permis mais 25 % des morts.",
+        "<b>En taxi ou VTC</b>, il n’existe pas de chiffre australien. Aux États-Unis, Uber déclare 0,87 décès par 100 millions de miles, contre 1,33 en moyenne : donnée publiée par l’entreprise elle-même."
+      ]
+    },
+    {
+      t: "Soleil", sub: "risque de mélanome", rows: [
+        { l: "Plus de 100 grains de beauté", s: "comparé à moins de 15", v: 6.9, q: "solide", src: "Gandini et al. 2005, méta-analyse." },
+        { l: "Cheveux roux", s: "comparé à des cheveux foncés", v: 3.6, q: "solide", src: "Gandini et al. 2005." },
+        { l: "5 coups de soleil par décennie", s: "à l’âge adulte", v: 3.3, q: "solide", src: "Dennis et al. 2008, méta-analyse." },
+        { l: "Coups de soleil dans l’enfance", s: "comparé à jamais", v: 1.9, q: "solide", src: "Dennis et al. 2008 : rapport de cotes 1,91." },
+        { l: "Solarium avant 35 ans", s: "comparé à jamais", v: 1.87, q: "solide", src: "Boniol et al. 2012, BMJ." },
+        { l: "Crème solaire tous les jours", s: "tous mélanomes, essai de Nambour", v: 0.5, q: "indicatif", src: "Green et al. 2011 : 11 mélanomes contre 22 (p = 0,051). Pour les mélanomes invasifs : 3 contre 11, soit environ 73 % de moins." }
+      ],
+      notes: [
+        "<b>L’essai de Nambour</b>, mené dans le Queensland sur 1 621 adultes, reste l’une des rares preuves expérimentales : une crème solaire appliquée chaque jour divise environ par deux le risque de mélanome.",
+        "<b>L’exposition intermittente</b> (vacances, week-ends à la plage) est plus liée au mélanome que l’exposition régulière des métiers en extérieur (rapport de cotes 1,61 contre 0,95).",
+        "<b>L’indice UV</b> de Sydney dépasse 10 presque tous les jours d’été ; la protection est conseillée dès 3, y compris par temps couvert."
+      ]
+    }
+  ];
+  var fRoot = document.getElementById("factors");
+  factorBlocks.forEach(function (b, i) {
+    var blk = el("div", "factor-block");
+    var hd = el("header");
+    hd.appendChild(el("h3", null, b.t));
+    hd.appendChild(el("span", "eyebrow", b.sub));
+    blk.appendChild(hd);
+    var plot = el("div", "lp");
+    blk.appendChild(plot);
+    var rows = b.rows.slice().sort(function (a, c) { return c.v - a.v; }).map(function (r) {
+      var k = r.v === 0 ? "safe" : r.v > 1 ? "real" : r.v < 1 ? "safe" : "ref";
+      var val = r.v === 0 ? "≈ 0" : r.v === 1 ? "×1" : mult(r.v);
+      var tipV = r.v === 0 ? "Risque quasi nul" : r.v === 1 ? "Pas d’effet mesurable" :
+        r.v > 1 ? "Risque multiplié par " + NF(2).format(r.v) : "Risque multiplié par " + NF(2).format(r.v) + " (" + NF(2).format(Math.round((1 - r.v) * 100)) + " % de moins)";
+      return { l: r.l, s: r.s, v: r.v, k: k, val: val, val2: r.q, chip: r.q, tip: r.l + "\n" + tipV + "\nPreuve : " + r.q + "\n" + r.src };
+    });
+    logPlot(plot, rows, {
+      min: 0.12, max: 160, ticks: [0.2, 0.5, 1, 2, 5, 10, 20, 50, 100], strong: 1, minor: [0.5, 2, 20, 50],
+      tickFmt: function (t) { return "×" + NF(2).format(t); }, valHead: ""
+    });
+    var ul = el("ul", "notes");
+    b.notes.forEach(function (n) { var li = el("li"); li.innerHTML = n; ul.appendChild(li); });
+    blk.appendChild(ul);
+    fRoot.appendChild(blk);
+  });
+
+  /* ---------- 7. Le calcul du taxi ---------- */
+  var tKm = document.getElementById("taxi-km"), tAir = document.getElementById("taxi-air");
+  function drawTaxi() {
+    var km = +tKm.value, fly = R.fly[tAir.value], car = km * R.carKm;
+    document.getElementById("taxi-km-out").textContent = km + " km";
+    var max = Math.max(fly, car);
+    bars(document.getElementById("taxi-bars"), [
+      { l: "Le vol", s: FLY_LABEL[tAir.value], v: fly, k: "fear", val: fmtUm(fly) + " µm", tip: "Le vol\n" + fmtUm(fly) + " micromort, " + oneIn(fly) },
+      { l: "Le trajet en voiture", s: km + " km", v: car, k: "real", val: fmtUm(car) + " µm", tip: "Le trajet\n" + fmtUm(car) + " micromort, " + oneIn(car) }
+    ], max);
+    var ratio = car / fly, res = document.getElementById("taxi-res");
+    res.textContent = "";
+    if (ratio >= 1) {
+      res.appendChild(el("b", null, NF(2).format(ratio) + " fois"));
+      res.appendChild(document.createTextNode(" le risque du vol : la route est plus dangereuse que l’avion."));
+    } else {
+      res.appendChild(el("b", null, NF(2).format(1 / ratio) + " fois moins"));
+      res.appendChild(document.createTextNode(" que le vol. Avec cette compagnie, l’avion reste le plus risqué des deux, le trajet devrait dépasser " + NF(2).format(fly / R.carKm) + " km."));
+    }
+  }
+  tKm.addEventListener("input", drawTaxi);
+  tAir.addEventListener("change", drawTaxi);
+  drawTaxi();
+
+  /* ---------- 8. Calculateur ---------- */
+  var ids = ["c-swim", "c-surf", "c-fly", "c-car", "c-air", "c-flags"];
+  var inp = {};
+  ids.forEach(function (id) { inp[id] = document.getElementById(id); });
+  function drawCalc() {
+    var swim = +inp["c-swim"].value, surf = +inp["c-surf"].value, fly = +inp["c-fly"].value, car = +inp["c-car"].value;
+    var air = inp["c-air"].value, flags = inp["c-flags"].checked;
+    document.getElementById("c-swim-out").textContent = swim;
+    document.getElementById("c-surf-out").textContent = surf;
+    document.getElementById("c-fly-out").textContent = fly;
+    document.getElementById("c-car-out").textContent = NF(4).format(car) + " km";
+    var carYear = car * 52;
+    var rows = [
+      { l: "Requins, baignade", s: swim + " baignades", v: swim * R.swim, k: "fear" },
+      { l: "Noyade, baignade", s: flags ? "entre les drapeaux : quasi nul" : "hors surveillance", v: flags ? 0 : swim * R.drownOut, k: "real" },
+      { l: "Requins, surf", s: surf + " sessions", v: surf * R.surf, k: "fear" },
+      { l: "Surf, autres causes", s: "noyade, chocs, malaise", v: surf * (R.surfAll - R.surf), k: "real" },
+      { l: "Avion", s: fly + " vols, " + FLY_LABEL[air], v: fly * R.fly[air], k: "fear" },
+      { l: "Voiture", s: NF(4).format(carYear) + " km par an", v: carYear * R.carKm, k: "real" }
+    ];
+    var total = rows.reduce(function (a, r) { return a + r.v; }, 0);
+    var refs = [
+      { l: "Repère : cancer de la peau", s: "Australien moyen, par an", v: R.skinYear, k: "ref" },
+      { l: "Repère : route", s: "Australien moyen, par an", v: R.roadYear, k: "ref" }
+    ];
+    var all = rows.concat(refs);
+    var max = Math.max.apply(null, all.map(function (r) { return r.v; })) || 1;
+    all.forEach(function (r) {
+      r.val = r.v ? fmtUm(r.v) : "0";
+      r.tip = r.l + " (" + r.s + ")\n" + (r.v ? fmtUm(r.v) + " micromorts par an, " + oneIn(r.v) : "Risque négligeable");
+    });
+    bars(document.getElementById("calc-bars"), all, max);
+    document.getElementById("c-total").textContent = fmtUm(total);
+    document.getElementById("c-total-sub").textContent = "micromorts par an pour ces activités" + (total ? ", soit " + oneIn(total) : "");
+    var shark = rows[0].v + rows[2].v, says = document.getElementById("calc-says");
+    if (!total) { says.textContent = "Ajoutez une activité pour voir votre risque."; return; }
+    var parts = [];
+    parts.push("Les requins représentent " + (shark / total * 100 < 1 ? "moins de 1" : NF(2).format(shark / total * 100)) + " % de ce total.");
+    if (shark > 0) parts.push("Votre risque requin de l’année équivaut à " + NF(2).format(shark / R.carKm) + " km de voiture.");
+    var flyV = rows[4].v;
+    if (flyV > 0) parts.push("Vos " + fly + " vols pèsent autant que " + NF(2).format(flyV / R.carKm) + " km de voiture.");
+    parts.push("Le risque moyen de cancer de la peau d’un Australien (82 micromorts par an) vaut " + NF(2).format(R.skinYear / total) + " fois ce total.");
+    says.textContent = parts.join(" ");
+  }
+  ids.forEach(function (id) { inp[id].addEventListener("input", drawCalc); inp[id].addEventListener("change", drawCalc); });
+  document.getElementById("calc-form").addEventListener("submit", function (e) { e.preventDefault(); });
+  drawCalc();
+})();
+</script>
+
+</body>
+</html>

@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Peur bleue</title>
-<meta name="description" content="Requins à Sydney, crashs d’avion : ce que disent les chiffres face aux vrais risques du quotidien.">
-<meta property="og:title" content="Peur bleue">
-<meta property="og:description" content="Requins à Sydney, crashs d’avion : ce que disent les chiffres face aux vrais risques du quotidien.">
+<meta name="description" content="Au-delà de 5 km en voiture, le trajet jusqu’à l’aéroport est plus risqué qu’un vol sur une compagnie australienne. Le centre de Sydney est à 8 km de l’aéroport ; celui de Melbourne, à environ 23.">
+<meta property="og:title" content="Le taxi pour l’aéroport est plus dangereux que l’avion.">
+<meta property="og:description" content="5 km · Au-delà de 5 km en voiture, le trajet jusqu’à l’aéroport est plus risqué qu’un vol sur une compagnie australienne. Le centre de Sydney est à 8 km de l’aéroport ; celui de Melbourne, à environ 23.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://robinlietar.github.io/peur-bleue/fr/">
 <link rel="canonical" href="https://robinlietar.github.io/peur-bleue/fr/">
@@ -89,6 +89,21 @@ a:hover{text-decoration-thickness:2px}
 .lede{font-size:clamp(1.12rem,1vw + .9rem,1.3rem);line-height:1.5;color:var(--ink-2);max-width:40rem;margin-top:1.3rem}
 .unit{display:flex;gap:.9rem;align-items:baseline;margin-top:1.6rem;max-width:40rem;font-family:var(--f-display);font-size:.95rem;line-height:1.45;color:var(--ink-2)}
 .unit .eyebrow{flex:none;color:var(--ink)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,17rem);column-gap:3.5rem;align-items:start;margin-top:.9rem}
+.hero-grid h1{margin-top:0;grid-column:1;grid-row:1}
+.hero-grid .hero-num{grid-column:2;grid-row:1 / span 2;align-self:end}
+.hero-grid .lede{grid-column:1;grid-row:2}
+@media (max-width:860px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero-grid h1,.hero-grid .hero-num,.hero-grid .lede{grid-column:1;grid-row:auto;align-self:start}.hero-grid .hero-num{margin-top:1.4rem}}
+.hero-num{display:grid;gap:.55rem;border-top:2px solid var(--ink);padding-top:.9rem;align-content:start}
+.hero-num b{font-family:var(--f-display);font-weight:800;font-stretch:108%;font-size:clamp(3.4rem,4.5vw + 1.6rem,5.6rem);line-height:.95;letter-spacing:-.03em;color:var(--real)}
+.hero-num span{font-family:var(--f-display);font-size:.92rem;line-height:1.45;color:var(--ink-2)}
+.alt{margin-top:1.1rem;font-family:var(--f-display);font-size:.92rem;color:var(--ink-2)}
+.alt a{color:var(--ink);font-weight:600}
+.seg-ctl{display:inline-flex;border:1px solid var(--rule-strong);border-radius:6px;overflow:hidden;font-family:var(--f-display);font-size:.85rem}
+.seg-ctl button{font:inherit;background:transparent;color:var(--ink-2);border:0;padding:.35rem .8rem;cursor:pointer}
+.seg-ctl button + button{border-left:1px solid var(--rule-strong)}
+.seg-ctl button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.fig-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.2rem}
 
 /* Sections */
 section{padding-block:4.5rem 0}
@@ -289,12 +304,12 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
     <a class="brand" href="#haut"><span class="flagmark" aria-hidden="true"><i></i><i></i></span>Peur bleue</a>
     <nav class="nav" aria-label="Sections">
       <a href="#echelle">L’échelle</a>
+      <a href="#calculateur">Calculateur</a>
       <a href="#biais">Les biais</a>
       <a href="#requins">Requins</a>
       <a href="#avion">Avion</a>
       <a href="#quotidien">Le quotidien</a>
       <a href="#facteurs">Facteurs de risque</a>
-      <a href="#calculateur">Calculateur</a>
       <a href="#sources">Sources</a>
       <a class="lang" href="../" hreflang="en" lang="en">English</a>
     </nav>
@@ -305,10 +320,14 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
   <div class="wrap">
 
     <div class="hero">
-      <p class="eyebrow">Sydney · Octobre 2026 · Les peurs face aux chiffres</p>
-      <h1>Le <span class="mark">taxi</span> pour l’aéroport est plus dangereux que l’avion.</h1>
-      <p class="lede">Et la route jusqu’à la plage est plus dangereuse que les requins. On craint ce qui est rare et spectaculaire, on oublie ce qui tue chaque jour. Ce site place les deux sur la même échelle, avec les données de Sydney et de l’Australie.</p>
-      <p class="unit"><span class="eyebrow">Unité</span><span>Le <b>micromort</b> : une chance sur un million de mourir. 0,01 micromort, c’est une chance sur 100 millions. L’unité a été proposée par Ronald Howard, de Stanford, pour comparer des risques très différents.</span></p>
+      <p class="eyebrow">Sydney et Australie · Octobre 2026 · Les peurs face aux chiffres</p>
+      <div class="hero-grid">
+        <h1>Le <span class="mark">taxi</span> pour l’aéroport est plus dangereux que l’avion.</h1>
+        <aside class="hero-num" aria-label="Chiffre clé"><b>5 km</b><span>Au-delà de 5 km en voiture, le trajet jusqu’à l’aéroport est plus risqué qu’un vol sur une compagnie australienne. Le centre de Sydney est à 8 km de l’aéroport ; celui de Melbourne, à environ 23.</span></aside>
+        <p class="lede">Et la route jusqu’à la plage est plus dangereuse que les requins. On craint ce qui est rare et spectaculaire, on oublie ce qui tue chaque jour. Ce site place les deux sur la même échelle, avec les données de Sydney et du reste de l’Australie.</p>
+      </div>
+      <p class="unit"><span class="eyebrow">Unité</span><span>Le <b>micromort</b> (micro + mortalité) : une chance sur un million de mourir. 0,01 micromort, c’est une chance sur 100 millions. C’est l’unité de référence en analyse du risque, proposée par Ronald Howard (Stanford) en 1979 et popularisée par le statisticien David Spiegelhalter.</span></p>
+      <p class="alt">Version requins : <a href="../fr/requins/">La route de la plage est plus dangereuse que le requin</a></p>
     </div>
 
     <figure class="fig" id="echelle">
@@ -324,12 +343,56 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
         </div>
       </div>
       <div class="lp" id="ladder"></div>
-      <p class="fig-note">Requins : base australienne des incidents de requin (Taronga, ASID v10), Nouvelle-Galles du Sud (NSW) 2010-2025, rapportée à la fréquentation estimée par Surf Life Saving NSW. Avion : Barnett et Reig Torra (MIT, 2024), décès par embarquement 2018-2022. Voiture : environ 2,5 morts par milliard de kilomètres parcourus (estimation à partir de BITRE). Repères quotidiens : ABS 2024, AIHW 2025, BITRE 2025, rapportés à 27,9 millions d’habitants. Détail des calculs dans la section <a href="#methode">Méthode</a>.</p>
+      <p class="fig-note">Requins : base australienne des incidents de requin (Taronga, ASID v10), Australie 2010-2025, rapportée à la fréquentation de la côte estimée par Surf Life Saving Australia. Avion : Barnett et Reig Torra (MIT, 2024), décès par embarquement 2018-2022. Voiture : environ 2,5 morts par milliard de kilomètres parcourus (estimation à partir de BITRE). Repères quotidiens : ABS 2024, AIHW 2025, BITRE 2025, rapportés à 27,9 millions d’habitants. Détail des calculs dans la section <a href="#methode">Méthode</a>.</p>
       <details>
         <summary>Voir les chiffres</summary>
         <div class="table-wrap"><table id="ladder-table"><thead><tr><th>Activité</th><th class="n">Micromorts</th><th class="n">Une chance sur</th><th>Source</th></tr></thead><tbody></tbody></table></div>
       </details>
     </figure>
+
+    <section id="calculateur" aria-labelledby="calc-t">
+      <div class="sec-head">
+        <p class="eyebrow">Calculateur</p>
+        <h2 id="calc-t">Votre année en micromorts</h2>
+        <p class="lede">Entrez vos habitudes. Le calculateur additionne les risques de l’année et les compare aux risques moyens d’un Australien. Les valeurs de départ sont un exemple : un surfeur de Sydney qui prend l’avion six fois par an.</p>
+      </div>
+      <div class="calc">
+        <form class="calc-in" id="calc-form">
+          <div class="field">
+            <label for="c-swim">Baignades en mer par an <output id="c-swim-out" for="c-swim">40</output></label>
+            <input type="range" id="c-swim" min="0" max="250" step="5" value="40">
+          </div>
+          <label class="check" for="c-flags"><input type="checkbox" id="c-flags" checked><span>Je me baigne entre les drapeaux, pendant la surveillance</span></label>
+          <div class="field">
+            <label for="c-surf">Sessions de surf par an <output id="c-surf-out" for="c-surf">50</output></label>
+            <input type="range" id="c-surf" min="0" max="300" step="5" value="50">
+          </div>
+          <div class="field">
+            <label for="c-fly">Vols par an <output id="c-fly-out" for="c-fly">6</output></label>
+            <input type="range" id="c-fly" min="0" max="80" step="1" value="6">
+            <small>Un aller simple compte pour un vol. Une escale compte pour deux.</small>
+          </div>
+          <div class="field">
+            <label for="c-air">Compagnie habituelle</label>
+            <select id="c-air">
+              <option value="t1">Groupes 1 et 2 (Qantas, Virgin Australia, Europe…)</option>
+              <option value="world">Moyenne mondiale</option>
+              <option value="t3">Groupe 3 (reste du monde)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-car">Kilomètres en voiture par semaine <output id="c-car-out" for="c-car">150 km</output></label>
+            <input type="range" id="c-car" min="0" max="1500" step="10" value="150">
+          </div>
+        </form>
+        <div class="calc-out">
+          <div class="total"><b id="c-total">·</b><span id="c-total-sub">micromorts par an pour ces activités</span></div>
+          <div class="bars" id="calc-bars"></div>
+          <p class="calc-says" id="calc-says"></p>
+          <p class="fig-note" style="margin-top:0">Les repères gris sont des moyennes nationales, tous âges confondus. Le risque toutes causes d’un Australien moyen est d’environ 6 700 micromorts par an ; il dépend surtout de l’âge.</p>
+        </div>
+      </div>
+    </section>
 
     <section id="biais" aria-labelledby="biais-t">
       <div class="sec-head">
@@ -361,91 +424,6 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
           <h3>Compter les attaques ne suffit pas</h3>
           <p>« Trois attaques en deux jours » frappe les esprits. La question utile est : sur combien de baignades ? Sans le nombre de personnes dans l’eau, un décompte d’attaques ne dit rien du risque individuel.</p>
         </article>
-      </div>
-    </section>
-
-    <section id="requins" aria-labelledby="requins-t">
-      <div class="sec-head">
-        <p class="eyebrow">Requins · Sydney et Nouvelle-Galles du Sud</p>
-        <h2 id="requins-t">Les requins de Sydney</h2>
-        <p class="lede">Sydney traverse une série noire : trois morts en quatre ans, après 59 ans sans aucun décès. La peur se comprend. Mais rapporté à chaque baignade, le risque reste minuscule, et bien plus faible que celui de la noyade sur les mêmes plages.</p>
-      </div>
-      <div class="stats">
-        <div class="stat"><b>3 morts</b><span>par requin à Sydney depuis 2022 (Little Bay, Long Reef, Vaucluse), après aucun entre 1963 et 2022</span></div>
-        <div class="stat"><b>1 sur 940 millions</b><span>risque de mourir d’une morsure de requin, par baignade en mer en NSW (estimation 2010-2025)</span></div>
-        <div class="stat"><b>50 pour 1</b><span>noyades sur la côte de Sydney pour un mort par requin, de 2015 à 2025 (101 contre 2)</span></div>
-        <div class="stat"><b>68 %</b><span>des morsures en NSW touchent des surfeurs et autres pratiquants de planche (2010-2025)</span></div>
-      </div>
-
-      <figure class="fig">
-        <div class="fig-head">
-          <div>
-            <p class="fig-title">Morts par requin dans l’agglomération de Sydney depuis la pose des filets</p>
-            <p class="fig-sub">Chaque point est un décès, de 1937 à octobre 2026. Survolez un point pour le lieu et l’activité.</p>
-          </div>
-          <div class="legend">
-            <span class="key"><i style="--c:var(--fear)"></i>Attaque non provoquée</span>
-            <span class="key"><i class="ring" style="--c:var(--fear)"></i>Provoquée (pêche sous-marine)</span>
-          </div>
-        </div>
-        <div class="tl-box" id="timeline"></div>
-        <ul class="tl-list">
-          <li><b>1940-1963 : le port et les rivières</b>Les neuf décès de cette période ont lieu dans le port, les baies ou la Georges River, pas sur les plages océaniques.</li>
-          <li><b>1963-2022 : 59 ans sans mort</b>Le dernier décès sur une plage océanique de Sydney avant 2022 remontait à 1936, à South Steyne.</li>
-          <li><b>2022-2026 : trois décès</b>Un nageur à Little Bay (requin blanc, 2022), un surfeur à Long Reef (requin blanc, 2025), un garçon de 12 ans à Nielsen Park, Vaucluse (requin-bouledogue, janvier 2026).</li>
-        </ul>
-        <p class="fig-note">Sources : ASID v10 (Taronga, données jusqu’à juin 2026) et liste des attaques mortelles en Australie. Taronga recense 43 décès à Sydney depuis 1870.</p>
-      </figure>
-
-      <figure class="fig">
-        <div class="fig-head">
-          <div>
-            <p class="fig-title">Morsures non provoquées en Nouvelle-Galles du Sud, par an</p>
-            <p class="fig-sub">En moyenne, 8 morsures par an et moins d’un décès, sur environ 238 millions de visites à la côte.</p>
-          </div>
-          <div class="legend">
-            <span class="key"><i class="sq" style="--c:var(--fear)"></i>Mortelles</span>
-            <span class="key"><i class="sq" style="--c:var(--fear-soft)"></i>Non mortelles</span>
-          </div>
-        </div>
-        <div class="cols" id="nsw-cols" style="--h:190px"></div>
-        <p class="fig-note">Source : ASID v10, morsures non provoquées, Nouvelle-Galles du Sud, 2010-2025 (125 morsures, 11 décès).</p>
-      </figure>
-
-      <div class="split">
-        <div class="flow">
-          <h3>Le risque par sortie dans l’eau</h3>
-          <p>Pour passer d’un nombre d’attaques à un risque, il faut diviser par l’exposition. En Nouvelle-Galles du Sud, 5,5 millions d’adultes vont à la côte 3,6 fois par mois, soit environ 238 millions de visites par an. Les surfeurs y feraient environ 32 millions de sessions par an.</p>
-          <div class="table-wrap"><table class="risk-table">
-            <thead><tr><th>Par sortie, NSW</th><th class="n">Morsure</th><th class="n">Décès</th></tr></thead>
-            <tbody>
-              <tr><td>Baignade en mer, requin</td><td class="n">1 sur 135 M</td><td class="n">1 sur 940 M</td></tr>
-              <tr><td>Session de surf, requin</td><td class="n">1 sur 6 M</td><td class="n">1 sur 73 M</td></tr>
-              <tr><td>Visite à la côte, noyade</td><td class="n">·</td><td class="n">1 sur 4,2 M</td></tr>
-              <tr><td>Session de surf, toutes causes</td><td class="n">·</td><td class="n">1 sur 8,9 M</td></tr>
-            </tbody>
-          </table></div>
-          <p class="fig-note" style="margin-top:0">Le nombre de surfeurs est incertain : l’enquête AusPlay en compte cinq fois moins que Surf Life Saving. Avec elle, le risque par session de surf monterait à 1 sur 10 millions. En Californie, Ferretti et ses collègues (2015) estimaient 1 morsure sur 738 millions par baignade et 1 sur 17 millions par jour de surf.</p>
-        </div>
-        <div class="callout">
-          <p class="eyebrow">18 janvier 2026</p>
-          <h3>127 mm de pluie, trois morsures en deux jours</h3>
-          <p>Ce jour-là, Sydney a reçu sa plus forte pluie depuis 1988. Dans les 48 heures, trois morsures de requin-bouledogue ont eu lieu : Nielsen Park (mortelle), Dee Why (une planche mordue, enfant indemne) et North Steyne à Manly (un homme grièvement blessé).</p>
-          <p>Ce n’est pas un hasard. Les requins-bouledogues se rapprochent des plages après plus de 45 mm de pluie, quand l’eau dépasse 20 °C, surtout à quelques centaines de mètres des embouchures (Smoothey et al., 2023). Le risque n’est pas uniforme : il se concentre sur des jours et des lieux que l’on peut prévoir.</p>
-        </div>
-      </div>
-
-      <div class="split">
-        <div class="flow">
-          <h3>Les filets et les drones</h3>
-          <p>Depuis 1937, des filets sont posés de septembre à avril sur 51 plages entre Newcastle et Wollongong. En 2024/25, ils ont capturé 223 animaux, dont 24 requins visés ; 67 % des animaux pris sont morts. Une étude de 2024 (Huveneers et al.) ne trouve pas de différence mesurable de morsures entre plages avec et sans filet depuis les années 2000.</p>
-          <p>Depuis fin septembre 2026, 73 drones surveillent 97 plages, dont les 38 plages océaniques de Sydney, en plus de 305 lignes appâtées « SMART » qui permettent de relâcher les requins au large.</p>
-        </div>
-        <div class="flow">
-          <h3>La noyade, le vrai danger de la plage</h3>
-          <p>Sur la côte de Sydney, 101 personnes se sont noyées en dix ans, pour deux tuées par un requin. En 2024/25, aucun des 154 noyés côtiers d’Australie ne se baignait entre les drapeaux rouge et jaune pendant les heures de surveillance.</p>
-          <p>En NSW, 63 % des noyés côtiers étaient à plus d’un kilomètre d’un poste de secours, 40 % ont été pris dans un courant d’arrachement (« rip ») et 88 % étaient des hommes. Les drapeaux ne protègent pas des requins : en juin 2026, une nageuse a été mordue à Coogee, à moins de 30 m du bord et entre les drapeaux. Mais ils protègent très bien de la noyade.</p>
-        </div>
       </div>
     </section>
 
@@ -510,6 +488,21 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
       <figure class="fig">
         <div class="fig-head">
           <div>
+            <p class="fig-title">Du centre-ville à l’aéroport, dans cinq capitales</p>
+            <p class="fig-sub">Risque du trajet en voiture entre le centre et l’aéroport principal, comparé à un vol sur une compagnie australienne. Dans toutes les villes du graphique, la route est plus risquée que l’avion.</p>
+          </div>
+          <div class="legend">
+            <span class="key"><i class="sq" style="--c:var(--fear)"></i>Le vol</span>
+            <span class="key"><i class="sq" style="--c:var(--real)"></i>La route</span>
+          </div>
+        </div>
+        <div class="bars" id="cities"></div>
+        <p class="fig-note">Distances routières approximatives depuis le centre : Adélaïde 7 km, Sydney 8 km, Brisbane 12 km, Perth 12 à 17 km selon le terminal (14 km retenus), Melbourne environ 23 km. Vol : 1 sur 80 millions par embarquement (Barnett 2024). Voiture : 2,5 morts par milliard de kilomètres-passager.</p>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
             <p class="fig-title">Morts par milliard de kilomètres-passager, selon le mode de transport</p>
             <p class="fig-sub">États-Unis, 2000-2009. Échelle logarithmique : la moto est 3 000 fois plus meurtrière que l’avion de ligne par kilomètre.</p>
           </div>
@@ -530,6 +523,108 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
         <div class="flow">
           <h3>Une année noire reste rare</h3>
           <p>2025 a été une mauvaise année : 394 morts selon l’IATA, dont plus des trois quarts dans deux accidents, celui d’Air India 171 à Ahmedabad (260 morts) et la collision de Washington (67 morts). Rapporté à environ 5 milliards de passagers, cela fait encore 1 décès pour près de 13 millions d’embarquements. En 2023, l’IATA calculait qu’il faudrait prendre l’avion chaque jour pendant 103 239 ans pour vivre un accident où tout le monde meurt.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="requins" aria-labelledby="requins-t">
+      <div class="sec-head">
+        <p class="eyebrow">Requins · Sydney et Australie</p>
+        <h2 id="requins-t">Les requins, de Sydney à toute l’Australie</h2>
+        <p class="lede">L’Australie compte environ 20 morsures non provoquées par an et deux ou trois décès ; en 2025, c’était un tiers des morsures du monde. Sydney traverse une série noire : trois morts en quatre ans, après 59 ans sans aucun décès. Rapporté à chaque baignade, le risque reste minuscule, et bien plus faible que celui de la noyade sur les mêmes plages.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>2,5 par an</b><span>morts par requin en Australie, moyenne 2016-2025, contre 1 314 morts sur la route en 2025</span></div>
+        <div class="stat"><b>1 sur 840 millions</b><span>risque de mourir d’une morsure de requin, par baignade en mer en Australie (estimation 2010-2025)</span></div>
+        <div class="stat"><b>16 sur 37</b><span>décès par requin en Australie de 2010 à 2025 ont eu lieu en Australie-Occidentale, où vivent environ 11 % des Australiens</span></div>
+        <div class="stat"><b>50 pour 1</b><span>noyades sur la côte de Sydney pour un mort par requin, de 2015 à 2025 (101 contre 2)</span></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Morsures de requin non provoquées, par an</p>
+            <p class="fig-sub" id="bite-sub">Australie : environ 18 morsures et 2,3 décès par an (2010-2025), sur quelque 630 millions de visites à la côte.</p>
+          </div>
+          <div class="fig-tools">
+            <div class="seg-ctl" role="group" aria-label="Zone">
+              <button type="button" id="bite-au" aria-pressed="true">Australie</button>
+              <button type="button" id="bite-nsw" aria-pressed="false">Nouvelle-Galles du Sud</button>
+            </div>
+            <div class="legend">
+              <span class="key"><i class="sq" style="--c:var(--fear)"></i>Mortelles</span>
+              <span class="key"><i class="sq" style="--c:var(--fear-soft)"></i>Non mortelles</span>
+            </div>
+          </div>
+        </div>
+        <div class="cols" id="bite-cols" style="--h:190px"></div>
+        <p class="fig-note">Source : ASID v10, morsures non provoquées, 2010-2025. Australie : 284 morsures, 37 décès. Nouvelle-Galles du Sud : 125 morsures, 11 décès.</p>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Morts par requin selon l’État, 2010-2025</p>
+            <p class="fig-sub">Morsures non provoquées. L’Australie-Occidentale compte moins de morsures que la Nouvelle-Galles du Sud, mais plus de décès : 19 % de ses morsures ont été mortelles, contre 9 % en NSW.</p>
+          </div>
+        </div>
+        <div class="bars" id="states"></div>
+        <p class="fig-note">Source : ASID v10. Le Territoire du Nord n’a enregistré aucune morsure non provoquée sur la période. En septembre 2026, un nageur a été tué à Sorrento Beach, à Perth : le cinquième mort par requin en Australie cette année, et le deuxième par attaque non provoquée.</p>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-head">
+          <div>
+            <p class="fig-title">Morts par requin dans l’agglomération de Sydney depuis la pose des filets</p>
+            <p class="fig-sub">Chaque point est un décès, de 1937 à octobre 2026. Survolez un point pour le lieu et l’activité.</p>
+          </div>
+          <div class="legend">
+            <span class="key"><i style="--c:var(--fear)"></i>Attaque non provoquée</span>
+            <span class="key"><i class="ring" style="--c:var(--fear)"></i>Provoquée (pêche sous-marine)</span>
+          </div>
+        </div>
+        <div class="tl-box" id="timeline"></div>
+        <ul class="tl-list">
+          <li><b>1940-1963 : le port et les rivières</b>Les neuf décès de cette période ont lieu dans le port, les baies ou la Georges River, pas sur les plages océaniques.</li>
+          <li><b>1963-2022 : 59 ans sans mort</b>Le dernier décès sur une plage océanique de Sydney avant 2022 remontait à 1936, à South Steyne.</li>
+          <li><b>2022-2026 : trois décès</b>Un nageur à Little Bay (requin blanc, 2022), un surfeur à Long Reef (requin blanc, 2025), un garçon de 12 ans à Nielsen Park, Vaucluse (requin-bouledogue, janvier 2026).</li>
+        </ul>
+        <p class="fig-note">Sources : ASID v10 (Taronga, données jusqu’à juin 2026) et liste des attaques mortelles en Australie. Taronga recense 43 décès à Sydney depuis 1870.</p>
+      </figure>
+
+      <div class="split">
+        <div class="flow">
+          <h3>Le risque par sortie dans l’eau</h3>
+          <p>Pour passer d’un nombre d’attaques à un risque, il faut diviser par l’exposition. Environ 16,6 millions d’Australiens vont à la côte, 3,3 fois par mois en moyenne : quelque 630 millions de visites par an. Environ 1,8 million surfent, 46 sessions par an chacun.</p>
+          <div class="table-wrap"><table class="risk-table">
+            <thead><tr><th>Par sortie</th><th class="n">Morsure, Australie</th><th class="n">Décès, Australie</th><th class="n">Décès, NSW</th></tr></thead>
+            <tbody>
+              <tr><td>Baignade en mer, requin</td><td class="n">1 sur 137 M</td><td class="n">1 sur 840 M</td><td class="n">1 sur 940 M</td></tr>
+              <tr><td>Session de surf, requin</td><td class="n">1 sur 8 M</td><td class="n">1 sur 61 M</td><td class="n">1 sur 73 M</td></tr>
+              <tr><td>Visite à la côte, noyade</td><td class="n">·</td><td class="n">1 sur 4,1 M</td><td class="n">1 sur 4,2 M</td></tr>
+              <tr><td>Session de surf, toutes causes</td><td class="n">·</td><td class="n">1 sur 8,9 M</td><td class="n">·</td></tr>
+            </tbody>
+          </table></div>
+          <p class="fig-note" style="margin-top:0">Le nombre de surfeurs est incertain : l’enquête AusPlay en compte cinq fois moins que Surf Life Saving. Avec elle, le risque par session de surf monterait à environ 1 sur 12 millions. En Californie, Ferretti et ses collègues (2015) estimaient 1 morsure sur 738 millions par baignade et 1 sur 17 millions par jour de surf.</p>
+        </div>
+        <div class="callout">
+          <p class="eyebrow">18 janvier 2026</p>
+          <h3>127 mm de pluie, trois morsures en deux jours</h3>
+          <p>Ce jour-là, Sydney a reçu sa plus forte pluie depuis 1988. Dans les 48 heures, trois morsures de requin-bouledogue ont eu lieu : Nielsen Park (mortelle), Dee Why (une planche mordue, enfant indemne) et North Steyne à Manly (un homme grièvement blessé).</p>
+          <p>Ce n’est pas un hasard. Les requins-bouledogues se rapprochent des plages après plus de 45 mm de pluie, quand l’eau dépasse 20 °C, surtout à quelques centaines de mètres des embouchures (Smoothey et al., 2023). Le risque n’est pas uniforme : il se concentre sur des jours et des lieux que l’on peut prévoir.</p>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="flow">
+          <h3>Les filets et les drones</h3>
+          <p>Depuis 1937, des filets sont posés de septembre à avril sur 51 plages entre Newcastle et Wollongong. En 2024/25, ils ont capturé 223 animaux, dont 24 requins visés ; 67 % des animaux pris sont morts. Une étude de 2024 (Huveneers et al.) ne trouve pas de différence mesurable de morsures entre plages avec et sans filet depuis les années 2000.</p>
+          <p>Depuis fin septembre 2026, 73 drones surveillent 97 plages, dont les 38 plages océaniques de Sydney, en plus de 305 lignes appâtées « SMART » qui permettent de relâcher les requins au large.</p>
+        </div>
+        <div class="flow">
+          <h3>La noyade, le vrai danger de la plage</h3>
+          <p>Sur la côte de Sydney, 101 personnes se sont noyées en dix ans, pour deux tuées par un requin. Dans toute l’Australie, 313 personnes se sont noyées en 2025/26, dont 151 sur la côte, contre deux ou trois morts par requin une année ordinaire. En 2024/25, aucun des 154 noyés côtiers d’Australie ne se baignait entre les drapeaux rouge et jaune pendant les heures de surveillance.</p>
+          <p>En NSW, 63 % des noyés côtiers étaient à plus d’un kilomètre d’un poste de secours, 40 % ont été pris dans un courant d’arrachement (« rip ») et 88 % étaient des hommes. Les drapeaux ne protègent pas des requins : en juin 2026, une nageuse a été mordue à Coogee, à moins de 30 m du bord et entre les drapeaux. Mais ils protègent très bien de la noyade.</p>
         </div>
       </div>
     </section>
@@ -604,60 +699,16 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
       <div class="factors" id="factors"></div>
     </section>
 
-    <section id="calculateur" aria-labelledby="calc-t">
-      <div class="sec-head">
-        <p class="eyebrow">Calculateur</p>
-        <h2 id="calc-t">Votre année en micromorts</h2>
-        <p class="lede">Entrez vos habitudes. Le calculateur additionne les risques de l’année et les compare aux risques moyens d’un Australien. Les valeurs de départ sont un exemple : un surfeur de Sydney qui prend l’avion six fois par an.</p>
-      </div>
-      <div class="calc">
-        <form class="calc-in" id="calc-form">
-          <div class="field">
-            <label for="c-swim">Baignades en mer par an <output id="c-swim-out" for="c-swim">40</output></label>
-            <input type="range" id="c-swim" min="0" max="250" step="5" value="40">
-          </div>
-          <label class="check" for="c-flags"><input type="checkbox" id="c-flags" checked><span>Je me baigne entre les drapeaux, pendant la surveillance</span></label>
-          <div class="field">
-            <label for="c-surf">Sessions de surf par an <output id="c-surf-out" for="c-surf">50</output></label>
-            <input type="range" id="c-surf" min="0" max="300" step="5" value="50">
-          </div>
-          <div class="field">
-            <label for="c-fly">Vols par an <output id="c-fly-out" for="c-fly">6</output></label>
-            <input type="range" id="c-fly" min="0" max="80" step="1" value="6">
-            <small>Un aller simple compte pour un vol. Une escale compte pour deux.</small>
-          </div>
-          <div class="field">
-            <label for="c-air">Compagnie habituelle</label>
-            <select id="c-air">
-              <option value="t1">Groupes 1 et 2 (Qantas, Virgin Australia, Europe…)</option>
-              <option value="world">Moyenne mondiale</option>
-              <option value="t3">Groupe 3 (reste du monde)</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="c-car">Kilomètres en voiture par semaine <output id="c-car-out" for="c-car">150 km</output></label>
-            <input type="range" id="c-car" min="0" max="1500" step="10" value="150">
-          </div>
-        </form>
-        <div class="calc-out">
-          <div class="total"><b id="c-total">·</b><span id="c-total-sub">micromorts par an pour ces activités</span></div>
-          <div class="bars" id="calc-bars"></div>
-          <p class="calc-says" id="calc-says"></p>
-          <p class="fig-note" style="margin-top:0">Les repères gris sont des moyennes nationales, tous âges confondus. Le risque toutes causes d’un Australien moyen est d’environ 6 700 micromorts par an ; il dépend surtout de l’âge.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="methode" aria-labelledby="methode-t">
       <div class="sec-head">
         <p class="eyebrow">Méthode et limites</p>
         <h2 id="methode-t">Comment les chiffres sont calculés</h2>
       </div>
       <ul class="method">
-        <li><b>Requins, baignade.</b> 3 nageurs tués en NSW de 2010 à 2025 (0,19 par an), divisés par environ 177 millions de visites de baigneurs par an (5,5 millions d’adultes, 3,6 visites par mois, 75 % de baigneurs, enquête Surf Life Saving NSW 2023). Si les baigneurs n’entrent dans l’eau qu’une visite sur deux, le risque double.</li>
-        <li><b>Requins, surf.</b> 7 pratiquants de planche tués en NSW de 2010 à 2025, divisés par 32 millions de sessions par an (700 000 surfeurs, 45,7 sessions par an d’après Lawes et al. 2023). Avec les effectifs d’AusPlay, le risque serait environ sept fois plus élevé.</li>
+        <li><b>Requins, baignade.</b> 9 nageurs tués en Australie de 2010 à 2025 (0,56 par an), divisés par environ 470 millions de visites de baigneurs par an : quelque 630 millions de visites à la côte (Surf Life Saving Australia, 2025), dont 75 % de baigneurs comme dans l’enquête de NSW. Si les baigneurs n’entrent dans l’eau qu’une visite sur deux, le risque double. La NSW seule donne un chiffre proche (3 décès, 177 millions de baignades par an).</li>
+        <li><b>Requins, surf.</b> 21 pratiquants de planche tués en Australie de 2010 à 2025, divisés par 80 millions de sessions par an (1,76 million de surfeurs, 45,7 sessions par an d’après Lawes et al. 2023). Avec les effectifs d’AusPlay, le risque serait environ cinq fois plus élevé.</li>
         <li><b>Surf, toutes causes.</b> 0,06 décès par million d’heures de surf (Lawes et al. 2023, Australie), multiplié par 1,88 heure par session.</li>
-        <li><b>Noyade.</b> Environ 56 noyades côtières par an en NSW (2022 à 2025), divisées par 238 millions de visites. Les visites surveillées (51 %) ne comptent presque aucun décès : le risque hors surveillance est donc environ deux fois la moyenne.</li>
+        <li><b>Noyade.</b> Environ 152 noyades côtières par an en Australie (2023 à 2026), divisées par 630 millions de visites ; la NSW donne le même taux (56 par an pour 238 millions de visites). Les visites surveillées (51 %) ne comptent presque aucun décès : le risque hors surveillance est donc environ deux fois la moyenne.</li>
         <li><b>Voiture.</b> 0,50 mort pour 100 millions de kilomètres-véhicule (BITRE), 1,57 occupant par voiture, environ deux tiers des morts parmi les occupants : environ 2,5 morts par milliard de kilomètres-passager, proche du chiffre européen.</li>
         <li><b>Avion.</b> Décès par embarquement de Barnett et Reig Torra (2024) pour 2018-2022 : 1 sur 80 millions (groupes 1 et 2), 1 sur 13,7 millions (monde), 1 sur 2,2 millions (groupe 3).</li>
         <li><b>Repères quotidiens.</b> Décès annuels divisés par 27,9 millions d’habitants (ABS, mars 2026) puis par 365. Ce sont des moyennes tous âges : le risque toutes causes d’un trentenaire est bien plus faible que 18 micromorts par jour.</li>
@@ -677,6 +728,8 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
             <li><a href="https://zenodo.org/records/22262542">Australian Shark-Incident Database v10</a>, Taronga, 2026</li>
             <li><a href="https://www.taronga.org.au/siteassets/wildlife--conservation/tisl/shark-incident-database/asid-2025-summary-1.pdf">Bilan ASID 2025</a>, Taronga</li>
             <li><a href="https://www.surflifesaving.com.au/wp-content/uploads/sites/2/2023/11/New-South-Wales-Coastal-Safety-Report-2023.pdf">NSW Coastal Safety Report 2023</a>, Surf Life Saving NSW</li>
+            <li><a href="https://lsv.com.au/media-centre/campaigns/stop-look-stay-alive">Life Saving Victoria</a>, 630 millions de visites à la côte (source secondaire)</li>
+            <li><a href="https://www.cbsnews.com/news/shark-attack-swimmer-killed-australia-horrified-beachgoers/">CBS News, septembre 2026</a>, Sorrento Beach</li>
             <li><a href="https://doi.org/10.1371/journal.pone.0285928">Lawes et al. 2023</a>, PLoS ONE (surf)</li>
             <li><a href="https://www.ausport.gov.au/clearinghouse/research/archive/surfing">AusPlay, surf</a>, Australian Sports Commission</li>
             <li><a href="https://doi.org/10.1890/150109">Ferretti et al. 2015</a>, Californie</li>
@@ -786,8 +839,8 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
 
   /* ---------- Risques de base, en micromorts ---------- */
   var R = {
-    swim: 0.00106, swimHi: 0.00212,        // requin, par baignade, NSW 2010-2025
-    surf: 0.0137, surfHi: 0.098,           // requin, par session de surf
+    swim: 0.00119, swimHi: 0.00238,        // requin, par baignade, Australie 2010-2025
+    surf: 0.0163, surfHi: 0.086,           // requin, par session de surf, Australie
     surfAll: 0.113,                        // surf, toutes causes (Lawes 2023)
     drownOut: 0.48,                        // noyade, visite hors surveillance
     carKm: 0.0025,                         // voiture, par km-passager
@@ -882,10 +935,11 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
 
   /* ---------- 1. L'échelle des risques ---------- */
   var ladder = [
-    { l: "Une baignade en mer", s: "requin, NSW", v: R.swim, hi: R.swimHi, k: "fear", src: "ASID v10, SLS NSW 2023" },
+    { l: "Une baignade en mer", s: "requin, Australie", v: R.swim, hi: R.swimHi, k: "fear", src: "ASID v10, SLSA 2025" },
     { l: "Un vol, groupes 1 et 2", s: "Qantas, Virgin, Europe, Amérique du Nord…", v: R.fly.t1, k: "fear", src: "Barnett 2024, 2018-2022" },
-    { l: "Une session de surf", s: "requin, NSW", v: R.surf, hi: R.surfHi, k: "fear", src: "ASID v10, Lawes 2023, AusPlay" },
+    { l: "Une session de surf", s: "requin, Australie", v: R.surf, hi: R.surfHi, k: "fear", src: "ASID v10, Lawes 2023, AusPlay" },
     { l: "8 km de taxi", s: "centre de Sydney → aéroport", v: 8 * R.carKm, k: "real", src: "BITRE, calcul de ce site" },
+    { l: "23 km de taxi", s: "centre de Melbourne → aéroport", v: 23 * R.carKm, k: "real", src: "BITRE, calcul de ce site" },
     { l: "Un vol, moyenne mondiale", s: "2018-2022", v: R.fly.world, k: "fear", src: "Barnett 2024" },
     { l: "30 km de voiture", s: "aller-retour jusqu’à la plage", v: 30 * R.carKm, k: "real", src: "BITRE, calcul de ce site" },
     { l: "Une session de surf", s: "toutes causes", v: R.surfAll, k: "real", src: "Lawes 2023" },
@@ -1004,21 +1058,37 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
     root.appendChild(plot);
     root.appendChild(xs);
   }
-  var nsw = [[2010, 6, 0], [2011, 4, 0], [2012, 7, 0], [2013, 3, 1], [2014, 5, 2], [2015, 14, 1], [2016, 12, 0], [2017, 5, 0],
-    [2018, 9, 0], [2019, 8, 0], [2020, 14, 2], [2021, 8, 2], [2022, 11, 1], [2023, 5, 0], [2024, 4, 0], [2025, 10, 2]];
+  // [année, morsures non provoquées, décès], ASID v10
+  var BITES = {
+    au: { data: [[2010, 14, 1], [2011, 9, 4], [2012, 18, 2], [2013, 9, 2], [2014, 13, 2], [2015, 22, 1], [2016, 21, 2], [2017, 17, 1],
+      [2018, 21, 1], [2019, 15, 0], [2020, 28, 7], [2021, 20, 4], [2022, 20, 1], [2023, 22, 4], [2024, 13, 0], [2025, 22, 5]],
+      max: 30, ticks: [0, 10, 20, 30], peak: [2020],
+      sub: "Australie : environ 18 morsures et 2,3 décès par an (2010-2025), sur quelque 630 millions de visites à la côte." },
+    nsw: { data: [[2010, 6, 0], [2011, 4, 0], [2012, 7, 0], [2013, 3, 1], [2014, 5, 2], [2015, 14, 1], [2016, 12, 0], [2017, 5, 0],
+      [2018, 9, 0], [2019, 8, 0], [2020, 14, 2], [2021, 8, 2], [2022, 11, 1], [2023, 5, 0], [2024, 4, 0], [2025, 10, 2]],
+      max: 16, ticks: [0, 5, 10, 15], peak: [2015, 2020],
+      sub: "Nouvelle-Galles du Sud : environ 8 morsures par an et moins d’un décès, sur environ 238 millions de visites à la côte." }
+  };
+  var biteArea = "au";
   var narrow = window.matchMedia("(max-width: 640px)");
-  function drawNsw() {
-    columns(document.getElementById("nsw-cols"), nsw.map(function (r) {
+  function drawBites() {
+    var b = BITES[biteArea];
+    document.getElementById("bite-sub").textContent = b.sub;
+    document.getElementById("bite-au").setAttribute("aria-pressed", String(biteArea === "au"));
+    document.getElementById("bite-nsw").setAttribute("aria-pressed", String(biteArea === "nsw"));
+    columns(document.getElementById("bite-cols"), b.data.map(function (r) {
       return {
         x: narrow.matches ? "’" + String(r[0]).slice(2) : String(r[0]),
         segs: [{ v: r[2], k: "fear" }, { v: r[1] - r[2], k: "fear-soft" }],
-        top: r[0] === 2015 || r[0] === 2020 ? String(r[1]) : "",
+        top: b.peak.indexOf(r[0]) >= 0 ? String(r[1]) : "",
         tip: r[0] + "\n" + r[1] + " morsure" + (r[1] > 1 ? "s" : "") + ", dont " + r[2] + " mortelle" + (r[2] > 1 ? "s" : "")
       };
-    }), { max: 16, ticks: [0, 5, 10, 15] });
+    }), { max: b.max, ticks: b.ticks });
   }
-  drawNsw();
-  if (narrow.addEventListener) narrow.addEventListener("change", drawNsw);
+  document.getElementById("bite-au").addEventListener("click", function () { biteArea = "au"; drawBites(); });
+  document.getElementById("bite-nsw").addEventListener("click", function () { biteArea = "nsw"; drawBites(); });
+  drawBites();
+  if (narrow.addEventListener) narrow.addEventListener("change", drawBites);
 
   var barnett = [["1968-1977", 350000], ["1978-1987", 750000], ["1988-1997", 1.3e6], ["1998-2007", 2.7e6], ["2008-2017", 7.9e6], ["2018-2022", 13.7e6]];
   columns(document.getElementById("barnett-cols"), barnett.map(function (r) {
@@ -1090,11 +1160,32 @@ footer .wrap{padding-block:1.6rem 2.5rem;display:flex;flex-wrap:wrap;gap:.5rem 2
   });
   bars(document.getElementById("deaths"), causes, 16326);
 
+  // [État, décès non provoqués, morsures non provoquées], ASID v10, 2010-2025
+  var states = [["Australie-Occidentale", 16, 85], ["Nouvelle-Galles du Sud", 11, 125], ["Queensland", 5, 38], ["Australie-Méridionale", 5, 21],
+    ["Victoria", 0, 13], ["Tasmanie", 0, 2], ["Territoire du Nord", 0, 0]];
+  bars(document.getElementById("states"), states.map(function (s) {
+    return {
+      l: s[0], s: s[2] + (s[2] > 1 ? " morsures" : " morsure"), v: s[1], k: "fear", val: s[1] + (s[1] > 1 ? " décès" : " décès"),
+      tip: s[0] + ", 2010-2025\n" + s[1] + " décès, " + s[2] + " morsures non provoquées" + (s[2] ? "\n" + NF(2).format(s[1] / s[2] * 100) + " % de morsures mortelles" : "")
+    };
+  }), 16);
+
+  // Centre-ville → aéroport principal, km par la route (approximatif)
+  var cities = [["Adélaïde", 7], ["Sydney", 8], ["Brisbane", 12], ["Perth", 14], ["Melbourne", 23]];
+  var cityRows = [{ l: "Le vol", s: "compagnie australienne", v: R.fly.t1, k: "fear", val: "×1", tip: "Le vol\n" + oneIn(R.fly.t1) + " par embarquement" }];
+  cities.forEach(function (c) {
+    var v = c[1] * R.carKm;
+    cityRows.push({ l: c[0], s: "environ " + c[1] + " km par la route", v: v, k: "real", val: "×" + NF(2).format(v / R.fly.t1),
+      tip: c[0] + ", centre → aéroport, environ " + c[1] + " km\n" + oneIn(v) + "\n" + NF(2).format(v / R.fly.t1) + " fois le risque du vol" });
+  });
+  bars(document.getElementById("cities"), cityRows, 23 * R.carKm);
+
   /* ---------- 6. Facteurs de risque ---------- */
   var factorBlocks = [
     {
-      t: "Requins", sub: "par sortie dans l’eau, Nouvelle-Galles du Sud", rows: [
-        { l: "Surfer plutôt que se baigner", s: "par sortie, jusqu’à ×90 selon les effectifs retenus", v: 13, q: "indicatif", src: "Calcul de ce site : ASID 2010-2025, SLS NSW, Lawes 2023" },
+      t: "Requins", sub: "par sortie dans l’eau, Australie", rows: [
+        { l: "Surfer plutôt que se baigner", s: "par sortie, jusqu’à ×70 selon les effectifs retenus", v: 14, q: "indicatif", src: "Calcul de ce site : ASID 2010-2025, SLSA, Lawes 2023" },
+        { l: "Australie-Occidentale, comparée à la moyenne", s: "morts par requin par habitant, 2010-2025", v: 4, q: "faible", src: "43 % des morts par requin en Australie de 2010 à 2025, pour environ 11 % de la population (ASID v10). Sans tenir compte du temps passé dans l’eau." },
         { l: "À l’aube, de 5 h à 8 h", s: "par heure, comparé à la journée", v: 1.6, q: "faible", src: "25 % des morsures en 3 heures, contre 42 % en 8 heures de journée (ASID, NSW 2000-2025). Sans le nombre de personnes dans l’eau." },
         { l: "En fin d’après-midi, de 16 h à 20 h", s: "par heure, comparé à la journée", v: 1.5, q: "faible", src: "32 % des morsures en 4 heures (ASID, NSW 2000-2025). Moins de monde dans l’eau à ces heures : l’effet réel est sans doute plus fort." },
         { l: "Plage protégée par un filet", s: "depuis les années 2000", v: 1, q: "indicatif", src: "Huveneers et al. 2024 : pas de différence détectable entre plages avec et sans filet." },
